@@ -29,14 +29,14 @@
 
 
 
-function binieon (){
+function collapsibleElement (){
     const injectElement = document.createElement('div');
     injectElement.innerHTML = '<button type="button" class="related-collapse">Open Collapsible</button>';
     document.querySelector("#meta").appendChild(injectElement);
 }
 
 
-setTimeout(binieon, 2000);
+setTimeout(collapsibleElement, 2000);
 
 
 var coll = document.getElementsByClassName("related-collapse");
