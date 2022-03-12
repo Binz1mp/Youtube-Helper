@@ -1,7 +1,7 @@
 {
   "name": "Vertical Youtube Style Changer",
   "description": "Sometimes you may want to remove or disable some related videos and see comments first. This does that.",
-  "version": "0.0.0.1",
+  "version": "0.1",
   "manifest_version": 3,
 
   "content_scripts": [
