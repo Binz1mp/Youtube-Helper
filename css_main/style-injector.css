@@ -11,6 +11,6 @@
     margin-bottom: 1.5em;
   }
   
-  .active, .related-collapse:hover {
-    background-color: var(--yt-ysm-background) !important;
-  }
+.related-collapse:hover {
+  background-color: var(--yt-ysm-background) !important;
+}
