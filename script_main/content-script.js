@@ -1,12 +1,12 @@
 document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const injectElement = document.createElement('div');
     let collapseButton = document.getElementsByClassName("related-collapse");
+    const targetStuff = document.querySelector("#related");
     var i;
     injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
-    document.querySelector("#meta").appendChild(injectElement);
+    document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
     for (i = 0; i < collapseButton.length; i++) {
         collapseButton[i].addEventListener("click", function () {
-          var targetStuff = document.querySelector("#related");
           // var fulltarget = document.querySelector("#related").style.display;
           if (targetStuff.style.display === "") {
               targetStuff.style.display = "none";
