@@ -1,10 +1,17 @@
 document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const injectElement = document.createElement('div');
+    injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
     const targetStuff = document.querySelector("#related");
     var i;
     injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
     document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
+    if (document.getElementsByClassName('collapseParent').length >= 2) {
+      document.querySelector('.collapseParent').remove('.related-collapse');
+      console.log("killed duplicated button");
+    } else {
+      console.log("seems like normal?");
+      }
     for (i = 0; i < collapseButton.length; i++) {
         collapseButton[i].addEventListener("click", function () {
           // var fulltarget = document.querySelector("#related").style.display;
@@ -20,7 +27,6 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
               document.querySelector(".related-collapse").textContent = 'Close Related Videos';
           }
         });
-        
     };
     if (localStorage.getItem('related_display') === 'display_normal') {
       document.querySelector("#related").style.display === ""
