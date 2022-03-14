@@ -11,6 +11,9 @@ Sometimes you may want to remove or disable some related videos and see comments
 
 ## devlog (KST, UTC+09:00)
 
+#### 2022-03-14 23:49
+button duplication issue has been solved.
+
 #### 2022-03-14 21:57
 localstorage done, now even if you reload the browser, closed/open button value will be saved.
 
