@@ -10,6 +10,10 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
-#### 2022-03-14
+
+#### 2022-03-14 21:57
+localstorage done, now even if you reload the browser, closed/open button value will be saved.
+
+#### 2022-03-14 16:08
 now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
 maybe I need to know how to deal with localStorage stuff.
