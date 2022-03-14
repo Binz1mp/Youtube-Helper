@@ -1,5 +1,5 @@
 .related-collapse {
-    background-color: var(--yt-guide-background);
+    background-color: var(--yt-spec-brand-background-solid);
     color: var(--ytd-searchbox-text-color);
     cursor: pointer;
     padding: 18px;
