@@ -10,8 +10,6 @@
       "css" : ["css_main/style-injector.css"]
     }
 ],
-"host_permissions": ["https://www.youtube.com/watch?*"],
-  "permissions": ["storage", "activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
