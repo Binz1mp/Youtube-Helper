@@ -10,6 +10,7 @@
       "css" : ["css_main/style-injector.css"]
     }
 ],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
