@@ -12,3 +12,4 @@ Sometimes you may want to remove or disable some related videos and see comments
 ## devlog (KST, UTC+09:00)
 #### 2022-03-14
 now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
+maybe I need to know how to deal with localStorage stuff.
