@@ -1,7 +1,6 @@
-/* Style the button that is used to open and close the collapsible content */
-/* .related-collapse {
-    background-color: #eee;
-    color: #444;
+.related-collapse {
+    background-color: var(--yt-guide-background);
+    color: var(--ytd-searchbox-text-color);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -9,22 +8,9 @@
     text-align: left;
     outline: none;
     font-size: 15px;
-  } */
+    margin-bottom: 1.5em;
+  }
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  /* .active, .related-collapse:hover {
-    background-color: #ccc;
-  } */
-  
-  /* Style the collapsible content. Note: hidden by default */
-  /* #related {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  } */
-
-  /* temporary solution */
-  #related {
-    display: none;
+  .active, .related-collapse:hover {
+    background-color: var(--yt-ysm-background);
   }
