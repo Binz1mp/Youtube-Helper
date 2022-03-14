@@ -5,6 +5,9 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const targetStuff = document.querySelector("#related");
     var i;
     injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
+    // for wide mode
+    // const insertbeforestuff = document.querySelector("#ticket-shelf");
+    // document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
     document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
     if (document.getElementsByClassName('collapseParent').length >= 2) {
       document.querySelector('.collapseParent').remove('.related-collapse');
