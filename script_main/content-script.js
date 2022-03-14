@@ -8,7 +8,11 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     // for wide mode
     // const insertbeforestuff = document.querySelector("#ticket-shelf");
     // document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
-    document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
+    if (document.querySelector("#primary-inner")) {
+      document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
+    } else {
+      console.log("are you watching in wide mode?");
+    }
     if (document.getElementsByClassName('collapseParent').length >= 2) {
       document.querySelector('.collapseParent').remove('.related-collapse');
       console.log("killed duplicated button");
