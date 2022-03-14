@@ -22,16 +22,11 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
         });
         
     };
-    console.log("리로드 했을때 로컬스토리지 = "+ localStorage.getItem('related_display'));
+    if (localStorage.getItem('related_display') === 'display_normal') {
+      document.querySelector("#related").style.display === ""
+      document.querySelector(".related-collapse").textContent = 'Close Related Videos';
+    } else {
+      document.querySelector("#related").style.display = "none"
+      document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+      }
 });
-
-
-// document.addEventListener('yt-navigate-finish', function loadLocalStorage() {
-//   if (localStorage.getItem('related_display') = 'display_none' ) {
-//     console.log("111111111111111111111111111");
-//     targetStuff.style.display = "";
-//   } else {
-//       console.log("22222222222222222222222222222");
-//       targetStuff.style.display = "none";
-//     }
-// })
