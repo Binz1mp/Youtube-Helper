@@ -5,11 +5,21 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const targetStuff = document.querySelector("#related");
     var i;
     injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
-    // for wide mode
-    // const insertbeforestuff = document.querySelector("#ticket-shelf");
-    // document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
+    // for vertical and wide mode start //
+    const insertbeforestuff = document.querySelector("#ticket-shelf");
+    // for vertical and wide mode end //
+
     if (document.querySelector("#primary-inner")) {
-      document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
+
+      // for vertical and wide mode start //
+      document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
+      // for vertical and wide mode end //
+
+      // for only vertical mode start //
+      // document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
+      // for only vertical mode end //
+
+
     } else {
       console.log("are you watching in wide mode? or maybe you entered Youtube first time in this tab.");
     }
@@ -35,11 +45,13 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           }
         });
     };
-    if (localStorage.getItem('related_display') === 'display_normal') {
+    if (document.querySelector("#related") && document.querySelector(".related-collapse") && localStorage.getItem('related_display') === 'display_normal') {
       document.querySelector("#related").style.display === ""
       document.querySelector(".related-collapse").textContent = 'Close Related Videos';
-    } else {
+    } else if (document.querySelector("#related") && document.querySelector(".related-collapse") && localStorage.getItem('related_display') === 'display_none') {
       document.querySelector("#related").style.display = "none"
       document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+      } else {
+        console.log("Now you are in the lobby. which means there's no button to modify now.");
       }
 });
