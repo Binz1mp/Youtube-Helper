@@ -2,6 +2,7 @@ toy project no.1, Chrome extension
 
 # Vertical-Youtube-Related-Videos-Remover
 Sometimes you may want to remove or disable some related videos and see comments first. This does that.
+
 Chrome web store: https://chrome.google.com/webstore/detail/vertical-youtube-related/pnllijckhhmdphamnkihmigimjegedle
 
 ## what it does
@@ -20,4 +21,5 @@ localstorage done, now even if you reload the browser, closed/open button value 
 
 #### 2022-03-14 16:08
 now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
+
 maybe I need to know how to deal with localStorage stuff.
