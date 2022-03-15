@@ -11,7 +11,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     if (document.querySelector("#primary-inner")) {
       document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
     } else {
-      console.log("are you watching in wide mode?");
+      console.log("are you watching in wide mode? or maybe you entered Youtube first time in this tab.");
     }
     if (document.getElementsByClassName('collapseParent').length >= 2) {
       document.querySelector('.collapseParent').remove('.related-collapse');
