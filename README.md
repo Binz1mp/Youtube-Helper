@@ -13,13 +13,13 @@ Sometimes you may want to remove or disable some related videos and see comments
 
 ## devlog (KST, UTC+09:00)
 
+#### 2022-03-16 01:59
+Now not only vertical mode, but also wide mode is supported.
+And also minor bug fix.
 #### 2022-03-14 23:49
-button duplication issue has been solved.
-
+Button duplication issue has been solved.
 #### 2022-03-14 21:57
 localstorage done, now even if you reload the browser, closed/open button value will be saved.
-
 #### 2022-03-14 16:08
-now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
-
-maybe I need to know how to deal with localStorage stuff.
+Now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
+Maybe I need to know how to deal with localStorage stuff.
