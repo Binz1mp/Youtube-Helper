@@ -3,6 +3,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
     const targetStuff = document.querySelector("#related");
+    // const targetStuff2 = document.querySelector("#secondary");
     var i;
     injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
     // for vertical and wide mode start //
@@ -19,7 +20,6 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
       // document.querySelector("#primary-inner").insertBefore(injectElement, targetStuff);
       // for only vertical mode end //
 
-
     } else {
       console.log("Hello!");
     }
@@ -34,23 +34,31 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           // var fulltarget = document.querySelector("#related").style.display;
           if (targetStuff.style.display === "") {
               targetStuff.style.display = "none";
+              // targetStuff2.style.display = "none";
+              // START_IN_THEATER_MODE = "true";
               localStorage.setItem("related_display", 'display_none');
-              document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+              collapseButton.textContent = 'Open Related Videos';
               console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem('related_display'));
           } else {
               targetStuff.style.display = "";
+              // targetStuff2.style.display = "";
+              // START_IN_THEATER_MODE = "false";
               localStorage.setItem("related_display", 'display_normal');
               console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem('related_display'));
-              document.querySelector(".related-collapse").textContent = 'Close Related Videos';
+              collapseButton.textContent = 'Close Related Videos';
           }
         });
     };
-    if (document.querySelector("#related") && document.querySelector(".related-collapse") && localStorage.getItem('related_display') === 'display_normal') {
-      document.querySelector("#related").style.display === ""
-      document.querySelector(".related-collapse").textContent = 'Close Related Videos';
-    } else if (document.querySelector("#related") && document.querySelector(".related-collapse") && localStorage.getItem('related_display') === 'display_none') {
-      document.querySelector("#related").style.display = "none"
-      document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+    if (targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
+      targetStuff.style.display = "";
+      // targetStuff2.style.display = "";
+      // START_IN_THEATER_MODE = "false";
+      collapseButton.textContent = 'Close Related Videos';
+    } else if (targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
+      targetStuff.style.display = "none";
+      // targetStuff2.style.display = "none";
+      // START_IN_THEATER_MODE = "true";
+      collapseButton.textContent = 'Open Related Videos';
       } else {
         console.log("Now you are in the lobby. which means there's no button to modify now.");
       }
