@@ -12,7 +12,14 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
+### 2022-03-25 17:25
+Now auto theatre mode added.
 
+After you close the related videos, you'll be watching youtube in theatre mode. with closed related videos.
+
+But of course, you can watch in theatre mode with opened related videos.
+
+Just click 'open related videos and click theatre mode icon in youtube player manually.
 ### 2022-03-16 01:59
 Now not only vertical mode, but also wide mode is supported.
 
