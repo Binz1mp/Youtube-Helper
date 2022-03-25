@@ -1,37 +1,66 @@
+var oldHref = document.location.href;
+if (window.location.href.indexOf('youtube.com/shorts') > -1) {
+    window.location.replace(window.location.toString().replace(/shorts/, '/watch/'));
+}
+window.onload = function() {
+    var bodyList = document.querySelector("body")
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (oldHref != document.location.href) {
+                oldHref = document.location.href;
+                console.log('location changed!');
+                if (window.location.href.indexOf('youtube.com/shorts') > -1) {
+                    window.location.replace(window.location.toString().replace(/shorts/, '/watch/'));
+                }
+            }
+        });
+    });
+    var config = {
+        childList: true,
+        subtree: true
+    };
+    observer.observe(bodyList, config);
+};
+
 document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const injectElement = document.createElement('div');
     injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
 
     function autoTheathreModeOn() {
-      if (document.querySelector("ytd-watch-flexy[theater]") == null) {
-        // var ytmeCallEventObject = document.createEvent("MouseEvents");
-        // ytmeCallEventObject.initEvent("click", true, true);
-        document.querySelector("button.ytp-size-button.ytp-button").click();
+      if (window.location.href.indexOf('youtube.com/watch') > -1) {
+        if (document.querySelector("ytd-watch-flexy[theater]") == null) {
+          var ytmeCallEventObject = document.createEvent("MouseEvents");
+          ytmeCallEventObject.initEvent("click", true, true);
+          document
+            .querySelector("button.ytp-size-button.ytp-button")
+            .dispatchEvent(ytmeCallEventObject);
+          var setTimeCall = setTimeout(() => {
+            if (document.querySelector("ytd-watch-flexy[theater]") == null) {
+              autoTheathreModeOn();
+            } else {
+              clearTimeout(setTimeCall);
+            }
+          }, 1500);
+        }
+      }}
+    function autoTheathreModeOff() {
+      if (window.location.href.indexOf('youtube.com/watch') > -1) {
+      if (document.querySelector("ytd-watch-flexy[theater]")) {
+        var ytmeCallEventObject = document.createEvent("MouseEvents");
+        ytmeCallEventObject.initEvent("click", true, true);
+        document
+          .querySelector("button.ytp-size-button.ytp-button")
+          .dispatchEvent(ytmeCallEventObject);
         var setTimeCall = setTimeout(() => {
-          if (document.querySelector("ytd-watch-flexy[theater]") == null) {
-            autoTheathreModeOn();
+          if (document.querySelector("ytd-watch-flexy[theater]")) {
+            autoTheathreModeOff();
           } else {
             clearTimeout(setTimeCall);
           }
-        }, 500);
+        }, 1500);
       }
-    }
-    function autoTheathreModeOff() {
-      // if (document.querySelector("ytd-watch-flexy[theater]")) {
-      //   // var ytmeCallEventObject = document.createEvent("MouseEvents");
-      //   // ytmeCallEventObject.initEvent("click", true, true);
-      //   document.querySelector("button.ytp-size-button.ytp-button").click();
-      //   var setTimeCall = setTimeout(() => {
-      //     if (document.querySelector("ytd-watch-flexy[theater]")) {
-      //       autoTheathreModeOff();
-      //     } else {
-      //       clearTimeout(setTimeCall);
-      //     }
-      //   }, 500);
-      // }
-      document.querySelector("button.ytp-size-button.ytp-button").click();
-    }
+    }}
 
     const targetStuff = document.querySelector("#related");
     // const targetStuff2 = document.querySelector("#secondary");
@@ -63,7 +92,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     for (i = 0; i < collapseButton.length; i++) {
         collapseButton[i].addEventListener("click", function () {
           // var fulltarget = document.querySelector("#related").style.display;
-          if (targetStuff.style.display === "") {
+          if (window.location.href.indexOf('youtube.com/watch') > -1 && targetStuff.style.display === "") {
               targetStuff.style.display = "none";
               // targetStuff2.style.display = "none";
               // START_IN_THEATER_MODE = "true";
@@ -82,19 +111,22 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           }
         });
     };
-    if (targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
+    if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
+      targetStuff.style.display = "none";
+      // targetStuff2.style.display = "none";
+      // START_IN_THEATER_MODE = "true";
+      document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+      autoTheathreModeOn();
+      console.log("autoTheathreModeOn");
+      }
+    else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
       targetStuff.style.display = "";
       // targetStuff2.style.display = "";
       // START_IN_THEATER_MODE = "false";
       document.querySelector(".related-collapse").textContent = 'Close Related Videos';
       autoTheathreModeOff()
-    } else if (targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
-      targetStuff.style.display = "none";
-      autoTheathreModeOn();
-      // targetStuff2.style.display = "none";
-      // START_IN_THEATER_MODE = "true";
-      document.querySelector(".related-collapse").textContent = 'Open Related Videos';
-      } else {
+      console.log("autoTheathreModeOff");
+    } else {
         console.log("Now you are in the lobby. which means there's no button to modify now.");
       }
 });

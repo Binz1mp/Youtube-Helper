@@ -12,6 +12,12 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
+### 2022-03-26 01:50
+Now youtube `shorts` link will be redirected to `watch`.
+
+youtube.com/`shorts`/blahblah -> youtube.com/`watch`/blahblah
+
+I just hate Youtube Shorts contents' layout.
 ### 2022-03-25 17:25
 Now auto theatre mode added.
 
