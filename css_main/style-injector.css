@@ -1,16 +1,23 @@
 .related-collapse {
-    background-color: var(--yt-spec-brand-background-primary) !important;
+    /* background-color: var(--yt-spec-brand-background-primary) !important; */
+    background-color: transparent;
     color: var(--ytd-searchbox-text-color) !important;
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: 1px solid var(--yt-spec-10-percent-layer);
+    border-top: 1px solid var(--yt-spec-10-percent-layer);
+    border-bottom: 1px solid var(--yt-spec-10-percent-layer);
+    border-left: 0px;
+    border-right: 0px;
     text-align: left;
     outline: none;
     font-size: 15px;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
   }
+
   
 .related-collapse:hover {
-  background-color: var(--yt-ysm-background) !important;
+  /* background-color: var(--yt-ysm-background) !important; */
+  background-color: var(--yt-spec-brand-background-primary) !important;
 }
