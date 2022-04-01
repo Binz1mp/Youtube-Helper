@@ -27,6 +27,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
 
+
     function autoTheathreModeOn() {
       if (window.location.href.indexOf('youtube.com/watch') > -1) {
         if (document.querySelector("ytd-watch-flexy[theater]") == null) {
@@ -35,15 +36,13 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           document
             .querySelector("button.ytp-size-button.ytp-button")
             .dispatchEvent(ytmeCallEventObject);
-          var setTimeCall = setTimeout(() => {
-            if (document.querySelector("ytd-watch-flexy[theater]") == null) {
-              autoTheathreModeOn();
-            } else {
-              clearTimeout(setTimeCall);
-            }
-          }, 1500);
+            console.log("autoTheathreModeOn1");
+        } else {
+          console.log("eh?On");
         }
-      }}
+      }
+    }
+
     function autoTheathreModeOff() {
       if (window.location.href.indexOf('youtube.com/watch') > -1) {
       if (document.querySelector("ytd-watch-flexy[theater]")) {
@@ -52,20 +51,17 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
         document
           .querySelector("button.ytp-size-button.ytp-button")
           .dispatchEvent(ytmeCallEventObject);
-        var setTimeCall = setTimeout(() => {
-          if (document.querySelector("ytd-watch-flexy[theater]")) {
-            autoTheathreModeOff();
-          } else {
-            clearTimeout(setTimeCall);
-          }
-        }, 1500);
+          console.log("autoTheathreModeOff1");
+      } else {
+        console.log("eh?Off");
+        }
       }
-    }}
+    }
 
     const targetStuff = document.querySelector("#related");
     // const targetStuff2 = document.querySelector("#secondary");
     var i;
-    injectElement.innerHTML = '<button type="button" class="related-collapse">Close Related Videos</button>';
+    injectElement.innerHTML = '<button class="related-collapse">Close Related Videos</button>';
     // for vertical and wide mode start //
     const insertbeforestuff = document.querySelector("#ticket-shelf");
     // for vertical and wide mode end //
@@ -74,6 +70,8 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
 
       // for vertical and wide mode start //
       document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
+      setTimeout(function () {
+      document.querySelector(".collapseParent").insertBefore(popcatChanInject, insertbeforestuffForpopCat);}, 5000)
       // for vertical and wide mode end //
 
       // for only vertical mode start //
@@ -100,6 +98,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
               document.querySelector(".related-collapse").textContent = 'Open Related Videos';
               console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem('related_display'));
               autoTheathreModeOn();
+              console.log("on");
           } else {
               targetStuff.style.display = "";
               // targetStuff2.style.display = "";
@@ -108,6 +107,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
               console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem('related_display'));
               document.querySelector(".related-collapse").textContent = 'Close Related Videos';
               autoTheathreModeOff();
+              console.log("off");
           }
         });
     };
@@ -116,16 +116,20 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
       // targetStuff2.style.display = "none";
       // START_IN_THEATER_MODE = "true";
       document.querySelector(".related-collapse").textContent = 'Open Related Videos';
+      setTimeout(function () {
       autoTheathreModeOn();
-      console.log("autoTheathreModeOn");
+      console.log("autoTheathreModeOn3");
+      },1500);
       }
     else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
       targetStuff.style.display = "";
       // targetStuff2.style.display = "";
       // START_IN_THEATER_MODE = "false";
       document.querySelector(".related-collapse").textContent = 'Close Related Videos';
-      autoTheathreModeOff()
-      console.log("autoTheathreModeOff");
+      setTimeout(function () {
+      autoTheathreModeOff();
+      console.log("autoTheathreModeOff3");
+      },1500);
     } else {
         console.log("Now you are in the lobby. which means there's no button to modify now.");
       }
