@@ -18,6 +18,8 @@ Video Hovering feature added.
 This just adds `position:fixed` to youtube player, so it may look cursed.
 
 But that's fine. That's what I intended. Because I just wanted to watch videos and comments at the same time.
+
+... But I'll fix that.
 ### 2022-04-02 00:23
 Minor bug fixed, minor design changed.
 ### 2022-03-26 01:50
