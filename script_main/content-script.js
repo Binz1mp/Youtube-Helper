@@ -70,8 +70,6 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
 
       // for vertical and wide mode start //
       document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
-      setTimeout(function () {
-      document.querySelector(".collapseParent").insertBefore(popcatChanInject, insertbeforestuffForpopCat);}, 5000)
       // for vertical and wide mode end //
 
       // for only vertical mode start //
