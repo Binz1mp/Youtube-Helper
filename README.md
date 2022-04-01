@@ -12,6 +12,12 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
+### 2022-04-02 01:25
+Video Hovering feature added.
+
+This just adds `position:fixed` to youtube player, so it may look cursed.
+
+But that's fine. That's what I intended. Because I just wanted to watch videos and comments at the same time.
 ### 2022-04-02 00:23
 Minor bug fixed, minor design changed.
 ### 2022-03-26 01:50

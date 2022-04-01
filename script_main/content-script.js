@@ -26,6 +26,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     const injectElement = document.createElement('div');
     injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
+    let hoverButton = document.getElementsByClassName("related-collapse_another");
 
 
     function autoTheathreModeOn() {
@@ -87,9 +88,10 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     }
 
     const targetStuff = document.querySelector("#related");
+    let videotarget = document.querySelector(".html5-video-container");
     // const targetStuff2 = document.querySelector("#secondary");
     var i;
-    injectElement.innerHTML = '<button class="related-collapse">Close Related Videos</button>';
+    injectElement.innerHTML = '<button class="related-collapse">Close Related Videos</button><button class="related-collapse_another">Hover Video</button>';
     // for vertical and wide mode start //
     const insertbeforestuff = document.querySelector("#ticket-shelf");
     // for vertical and wide mode end //
@@ -109,6 +111,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     }
     if (document.getElementsByClassName('collapseParent').length >= 2) {
       document.querySelector('.collapseParent').remove('.related-collapse');
+      document.querySelector('.collapseParent').remove('.related-collapse_another');
       console.log("killed duplicated button");
     } else {
       console.log("seems like normal?");
@@ -137,6 +140,20 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           }
         });
     };
+    for (i = 0; i < hoverButton.length; i++) {
+      hoverButton[i].addEventListener("click", function () {
+        if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
+            document.querySelector(".related-collapse_another").textContent = 'Drop Video';
+            videotarget.style.position = "fixed";
+            console.log("Hover on");
+        } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
+          document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+          videotarget.style.position = "";
+          console.log("Hover off");
+        }
+      });
+    };
+
     if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
       targetStuff.style.display = "none";
       // targetStuff2.style.display = "none";
