@@ -23,6 +23,7 @@ window.onload = function() {
 };
 
 document.addEventListener('yt-navigate-finish', function collapsibleElement (){
+
     const injectElement = document.createElement('div');
     injectElement.classList.add('collapseParent');
     let collapseButton = document.getElementsByClassName("related-collapse");
@@ -88,7 +89,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     }
 
     const targetStuff = document.querySelector("#related");
-    let videotarget = document.querySelector(".html5-video-container");
+    const videotarget = document.querySelector(".html5-video-container");
     // const targetStuff2 = document.querySelector("#secondary");
     var i;
     injectElement.innerHTML = '<button class="related-collapse">Close Related Videos</button><button class="related-collapse_another">Hover Video</button>';
@@ -109,13 +110,16 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     } else {
       console.log("Hello!");
     }
+
+    const extensionParent = document.querySelector('.collapseParent');
     if (document.getElementsByClassName('collapseParent').length >= 2) {
-      document.querySelector('.collapseParent').remove('.related-collapse');
-      document.querySelector('.collapseParent').remove('.related-collapse_another');
+      console.log("oh there are more than one elements.");
+      document.querySelector('.collapseParent').parentNode.removeChild(extensionParent);
       console.log("killed duplicated button");
     } else {
       console.log("seems like normal?");
       }
+
     for (i = 0; i < collapseButton.length; i++) {
         collapseButton[i].addEventListener("click", function () {
           // var fulltarget = document.querySelector("#related").style.display;
@@ -150,6 +154,8 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           document.querySelector(".related-collapse_another").textContent = 'Hover Video';
           videotarget.style.position = "";
           console.log("Hover off");
+        } else {
+          console.log("something broken.");
         }
       });
     };
