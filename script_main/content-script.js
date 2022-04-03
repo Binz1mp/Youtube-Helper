@@ -178,14 +178,18 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
       });
     };
     if (localStorage.getItem('Hovering_status') === 'on') {
+      setTimeout (function () {
       document.querySelector(".related-collapse_another").textContent = 'Drop Video';
       console.log ("on");
-    } else if (localStorage.getItem('Hovering_status') === 'off') {
-      document.querySelector(".related-collapse_another").textContent = 'Hover Video';
-      console.log("off");
-      } else {
-        console.log("hover system broken");
-        }
+    }, 1500)
+      } else if (localStorage.getItem('Hovering_status') === 'off') {
+        setTimeout (function () {
+        document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+        console.log("off");
+        }, 1500)
+          } else {
+            console.log("hover system broken");
+            }
 
     if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
       targetStuff.style.display = "none";
@@ -195,9 +199,7 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
       setTimeout(function () {
       autoTheathreModeOn();
       console.log("autoTheathreModeOn3");
-      },1500);
-      }
-    else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
+      }, 1500);} else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
       targetStuff.style.display = "";
       // targetStuff2.style.display = "";
       // START_IN_THEATER_MODE = "false";
