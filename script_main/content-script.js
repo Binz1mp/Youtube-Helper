@@ -154,6 +154,7 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
       hoverButton[i].addEventListener("click", function () {
         if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
             document.querySelector(".related-collapse_another").textContent = 'Drop Video';
+            localStorage.setItem("Hovering_status", 'on');
             videotarget.style.position = "fixed";
             videotargetzindex.style.zIndex = "301";
             videotargetzindextheatremode.style.zIndex = "301";
@@ -163,6 +164,7 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
             console.log("Hover on");
         } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
           document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+          localStorage.setItem("Hovering_status", 'off');
           videotarget.style.position = "";
           videotargetzindex.style.zIndex = "10";
           videotargetzindextheatremode.style.zIndex = "10";
@@ -175,6 +177,15 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
         }
       });
     };
+    if (localStorage.getItem('Hovering_status') === 'on') {
+      document.querySelector(".related-collapse_another").textContent = 'Drop Video';
+      console.log ("on");
+    } else if (localStorage.getItem('Hovering_status') === 'off') {
+      document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+      console.log("off");
+      } else {
+        console.log("hover system broken");
+        }
 
     if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
       targetStuff.style.display = "none";
