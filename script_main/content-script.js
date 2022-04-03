@@ -89,7 +89,6 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
     }
 
     const targetStuff = document.querySelector("#related");
-    const videotarget = document.querySelector(".html5-video-container");
     // const targetStuff2 = document.querySelector("#secondary");
     var i;
     injectElement.innerHTML = '<button class="related-collapse">Close Related Videos</button><button class="related-collapse_another">Hover Video</button>';
@@ -144,15 +143,32 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement (){
           }
         });
     };
+const videotarget = document.querySelector(".html5-video-container");
+const videotargetzindex = document.querySelector("#player.style-scope.ytd-watch-flexy");
+const videotargetzindextheatremode = document.querySelector("#player-container.style-scope.ytd-watch-flexy");
+const videotargetzcontrolbar = document.querySelector(".ytp-chrome-bottom");
+const videotargetsubtitle = document.querySelector(".ytp-caption-window-container#ytp-caption-window-container");
+const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
+
     for (i = 0; i < hoverButton.length; i++) {
       hoverButton[i].addEventListener("click", function () {
         if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
             document.querySelector(".related-collapse_another").textContent = 'Drop Video';
             videotarget.style.position = "fixed";
+            videotargetzindex.style.zIndex = "301";
+            videotargetzindextheatremode.style.zIndex = "301";
+            videotargetzcontrolbar.style.position = "fixed";
+            videotargetsubtitle.style.position = "fixed";
+            videotargetgradient.style.position = "fixed";
             console.log("Hover on");
         } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
           document.querySelector(".related-collapse_another").textContent = 'Hover Video';
           videotarget.style.position = "";
+          videotargetzindex.style.zIndex = "10";
+          videotargetzindextheatremode.style.zIndex = "10";
+          videotargetzcontrolbar.style.position = "";
+          videotargetsubtitle.style.position = "";
+          videotargetgradient.style.position = "";
           console.log("Hover off");
         } else {
           console.log("something broken.");

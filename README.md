@@ -12,6 +12,8 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
+### 2022-04-03 18:32 - version 1.1.5
+Comments will no longer cover/be on the Youtube player.
 ### 2022-04-02 01:25
 Video Hovering feature added.
 

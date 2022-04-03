@@ -1,7 +1,7 @@
 {
   "name": "Youtube Related Videos Remover",
   "description": "Sometimes you may want to remove or disable some related videos and see comments first. This does that.",
-  "version": "1.1.2",
+  "version": "1.1.5",
   "manifest_version": 3,
   "content_scripts": [
     {
