@@ -12,7 +12,7 @@ Sometimes you may want to remove or disable some related videos and see comments
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## devlog (KST, UTC+09:00)
-### 2022-04-03 21:27 - version 1.1.7.1
+### 2022-04-03 21:48 - version 1.1.7.2
 minor bug fixed
 ### 2022-04-03 19:58 - version 1.1.7
 minor bug fixed

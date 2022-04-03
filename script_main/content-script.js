@@ -150,39 +150,47 @@ const videotargetzcontrolbar = document.querySelector(".ytp-chrome-bottom");
 const videotargetsubtitle = document.querySelector(".ytp-caption-window-container#ytp-caption-window-container");
 const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
 
-    for (i = 0; i < hoverButton.length; i++) {
-      hoverButton[i].addEventListener("click", function () {
-        if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
-            document.querySelector(".related-collapse_another").textContent = 'Drop Video';
-            localStorage.setItem("Hovering_status", 'on');
-            videotarget.style.position = "fixed";
-            videotargetzindex.style.zIndex = "301";
-            videotargetzindextheatremode.style.zIndex = "301";
-            videotargetzcontrolbar.style.position = "fixed";
-            videotargetsubtitle.style.position = "fixed";
-            videotargetgradient.style.position = "fixed";
-            console.log("Hover on");
-        } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
-          document.querySelector(".related-collapse_another").textContent = 'Hover Video';
-          localStorage.setItem("Hovering_status", 'off');
-          videotarget.style.position = "";
-          videotargetzindex.style.zIndex = "10";
-          videotargetzindextheatremode.style.zIndex = "10";
-          videotargetzcontrolbar.style.position = "";
-          videotargetsubtitle.style.position = "";
-          videotargetgradient.style.position = "";
-          console.log("Hover off");
-        } else {
-          console.log("something broken.");
-        }
-      });
-    };
-    if (localStorage.getItem('Hovering_status') === 'on') {
+for (i = 0; i < hoverButton.length; i++) {
+  hoverButton[i].addEventListener("click", function () {
+    if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
+        document.querySelector(".related-collapse_another").textContent = 'Drop Video';
+        localStorage.setItem("Hovering_status", 'on');
+        videotarget.style.position = "fixed";
+        videotargetzindex.style.zIndex = "301";
+        videotargetzindextheatremode.style.zIndex = "301";
+        videotargetzcontrolbar.style.position = "fixed";
+        // videotargetsubtitle.style.position = "fixed";
+        videotargetgradient.style.position = "fixed";
+        console.log("Hover on");
+      if (videotargetsubtitle) {
+        videotargetsubtitle.style.position = "fixed";
+        console.log("subtitle area found");
+      } else {console.log("no subtitle area found");}
+    } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
+      document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+      localStorage.setItem("Hovering_status", 'off');
+      videotarget.style.position = "";
+      videotargetzindex.style.zIndex = "10";
+      videotargetzindextheatremode.style.zIndex = "10";
+      videotargetzcontrolbar.style.position = "";
+      // videotargetsubtitle.style.position = "";
+      videotargetgradient.style.position = "";
+      console.log("Hover off");
+      if (videotargetsubtitle) {
+        videotargetsubtitle.style.position = "";
+        console.log("subtitle area found");
+      } else {console.log("no subtitle area found");}
+    } else {
+      console.log("something broken.");
+    }
+  });
+};
+    if (localStorage.getItem('Hovering_status') === 'on' && videotarget.style.position === "fixed") {
       setTimeout (function () {
       document.querySelector(".related-collapse_another").textContent = 'Drop Video';
       console.log ("on");
     }, 1500)
-      } else if (localStorage.getItem('Hovering_status') === 'off') {
+      } else if (localStorage.getItem('Hovering_status') === 'off' && videotarget.style.position === "") {
         setTimeout (function () {
         document.querySelector(".related-collapse_another").textContent = 'Hover Video';
         console.log("off");
@@ -190,6 +198,8 @@ const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
           } else {
             console.log("hover system broken");
             }
+
+
 
     if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
       targetStuff.style.display = "none";
