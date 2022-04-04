@@ -17,9 +17,10 @@ Sometimes you may want to remove or disable some related videos and see comments
 3. Hover Youtube player so that you can scroll down watching video.
 4. Popcat on extension's popup page.
 
-## Dev Log (KST, UTC+09:00)
+## Devlog (KST, UTC+09:00)
 <details>
   <summary>Click to expand!</summary>
+
 ### 2022-04-03 21:48 - version 1.1.7.2
 minor bug fixed
 ### 2022-04-03 19:58 - version 1.1.7
