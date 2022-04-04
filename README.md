@@ -5,10 +5,10 @@ Sometimes you may want to remove or disable some related videos and see comments
 
 [Chrome web store link](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
 
-## what it does
-### before (Close Related Videos)
+## What it does
+### Before (Close Related Videos)
 ![001_before](https://user-images.githubusercontent.com/96367152/158127630-8a9fd25e-889d-48c2-9b92-8e8d97221094.png)
-### after (Open Related Videos)
+### After (Open Related Videos)
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## Features
@@ -17,7 +17,7 @@ Sometimes you may want to remove or disable some related videos and see comments
 3. Hover Youtube player so that you can scroll down watching video.
 4. Popcat on extension's popup page.
 
-## devlog (KST, UTC+09:00)
+## Dev Log (KST, UTC+09:00)
 <details>
   <summary>Click to expand!</summary>
 ### 2022-04-03 21:48 - version 1.1.7.2
