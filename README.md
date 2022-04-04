@@ -11,7 +11,15 @@ Sometimes you may want to remove or disable some related videos and see comments
 ### after (Open Related Videos)
 ![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
+## Features
+1. Toggle collapse Youtube related videos.
+2. Automatically redirects Youtube Shorts to normal Youtube player's layout. 
+3. Hover Youtube player so that you can scroll down watching video.
+4. Popcat on extension's popup page.
+
 ## devlog (KST, UTC+09:00)
+<details>
+  <summary>Click to expand!</summary>
 ### 2022-04-03 21:48 - version 1.1.7.2
 minor bug fixed
 ### 2022-04-03 19:58 - version 1.1.7
@@ -56,3 +64,4 @@ localstorage done, now even if you reload the browser, closed/open button value 
 Now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
 
 Maybe I need to know how to deal with localStorage stuff.
+</details>
