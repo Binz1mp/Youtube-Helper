@@ -185,12 +185,12 @@ for (i = 0; i < hoverButton.length; i++) {
     }
   });
 };
-    if (localStorage.getItem('Hovering_status') === 'on' && videotarget.style.position === "fixed") {
+    if (!window.location.href.indexOf('youtube.com/feed/subscriptions') && localStorage.getItem('Hovering_status') === 'on' && videotarget.style.position === "fixed") {
       setTimeout (function () {
       document.querySelector(".related-collapse_another").textContent = 'Drop Video';
       console.log ("on");
     }, 1500)
-      } else if (localStorage.getItem('Hovering_status') === 'off' && videotarget.style.position === "") {
+      } else if (!window.location.href.indexOf('youtube.com/feed/subscriptions') && localStorage.getItem('Hovering_status') === 'off' && videotarget.style.position === "") {
         setTimeout (function () {
         document.querySelector(".related-collapse_another").textContent = 'Hover Video';
         console.log("off");
