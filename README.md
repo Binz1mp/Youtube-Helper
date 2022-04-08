@@ -21,7 +21,7 @@ Sometimes you may want to remove or disable some related videos and see comments
 <details>
   <summary>Click to expand!</summary>
 
-### 2022-04-08 16:38 - version 1.1.8
+### 2022-04-08 18:03 - version 1.1.9
 PIP mode added, code by Google.
 ### 2022-04-08 16:38 - version 1.1.8
 Button will hover after you click Hover Video.
