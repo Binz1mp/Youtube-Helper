@@ -55,20 +55,7 @@
     margin-bottom: 0.5em;
     text-align: center;
   }
-.related-collapse:hover {
+.related-collapse:hover, .related-collapse_another:hover, .related-collapse_another_another:hover {
   /* background-color: var(--yt-ysm-background) !important; */
   background-color: var(--yt-spec-brand-background-primary) !important;
 }
-
-.related-collapse_another:hover {
-  /* background-color: var(--yt-ysm-background) !important; */
-  background-color: var(--yt-spec-brand-background-primary) !important;
-}
-/* .related-collapse:active {
-  top:1px;
-  transition-duration: 0.1s;
-}
-.related-collapse_another:active {
-  top:1px;
-  transition-duration: 0.1s;
-} */
