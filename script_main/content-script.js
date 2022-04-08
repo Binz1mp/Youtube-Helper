@@ -161,6 +161,12 @@ for (i = 0; i < hoverButton.length; i++) {
         videotargetzcontrolbar.style.position = "fixed";
         // videotargetsubtitle.style.position = "fixed";
         videotargetgradient.style.position = "fixed";
+        // 버튼 호버링 //
+        extensionParent.style.position = "fixed";
+        extensionParent.style.left = "52%";
+        extensionParent.style.bottom = "5%";
+        extensionParent.style.zIndex = "10";
+        // 버튼 호버링 //
         console.log("Hover on");
       if (videotargetsubtitle) {
         videotargetsubtitle.style.position = "fixed";
@@ -175,6 +181,12 @@ for (i = 0; i < hoverButton.length; i++) {
       videotargetzcontrolbar.style.position = "";
       // videotargetsubtitle.style.position = "";
       videotargetgradient.style.position = "";
+      // 버튼 호버링 //
+      extensionParent.style.position = "";
+      extensionParent.style.left = "";
+      extensionParent.style.bottom = "";
+      extensionParent.style.zIndex = "";
+      // 버튼 호버링 //
       console.log("Hover off");
       if (videotargetsubtitle) {
         videotargetsubtitle.style.position = "";

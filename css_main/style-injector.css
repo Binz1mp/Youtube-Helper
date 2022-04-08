@@ -1,10 +1,15 @@
+.collapseParent {
+  display: flex;
+}
+
 .related-collapse {
+  flex: 2;
     /* background-color: var(--yt-spec-brand-background-primary) !important; */
     background-color: transparent;
     color: var(--ytd-searchbox-text-color) !important;
     cursor: pointer;
     padding: 18px;
-    width: 70%;
+    /* width: 70%; */
     border-top: 1px solid var(--yt-spec-10-percent-layer);
     border-bottom: 1px solid var(--yt-spec-10-percent-layer);
     border-left: 0px;
@@ -16,12 +21,13 @@
     text-align: center;
   }
   .related-collapse_another {
+    flex: 1;
     /* background-color: var(--yt-spec-brand-background-primary) !important; */
     background-color: transparent;
     color: var(--ytd-searchbox-text-color) !important;
     cursor: pointer;
     padding: 18px;
-    width: 30%;
+    /* width: 30%; */
     border-left: 1px solid var(--yt-spec-10-percent-layer);
     border-top: 1px solid var(--yt-spec-10-percent-layer);
     border-bottom: 1px solid var(--yt-spec-10-percent-layer);
