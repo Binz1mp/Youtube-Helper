@@ -150,23 +150,44 @@ const videotargetzcontrolbar = document.querySelector(".ytp-chrome-bottom");
 const videotargetsubtitle = document.querySelector(".ytp-caption-window-container#ytp-caption-window-container");
 const videotargetgradient = document.querySelector(".ytp-gradient-bottom");
 
+function videoHoveringOn (){
+  videotarget.style.position = "fixed";
+  videotargetzindex.style.zIndex = "301";
+  videotargetzindextheatremode.style.zIndex = "301";
+  videotargetzcontrolbar.style.position = "fixed";
+  videotargetgradient.style.position = "fixed";
+  console.log("videoHoveringOn");
+}
+function videoHoveringOff (){
+  videotarget.style.position = "";
+  videotargetzindex.style.zIndex = "10";
+  videotargetzindextheatremode.style.zIndex = "10";
+  videotargetzcontrolbar.style.position = "";
+  videotargetgradient.style.position = "";
+  console.log("videoHoveringOff");
+}
+function buttonHoverringOn (){
+  document.querySelector('.collapseParent').style.position = "fixed";
+  document.querySelector('.collapseParent').style.left = "52%";
+  document.querySelector('.collapseParent').style.bottom = "5%";
+  document.querySelector('.collapseParent').style.zIndex = "10";
+  console.log("buttonHoverringOn");
+}
+function buttonHoverringOff (){
+  document.querySelector('.collapseParent').style.position = "";
+  document.querySelector('.collapseParent').style.left = "";
+  document.querySelector('.collapseParent').style.bottom = "";
+  document.querySelector('.collapseParent').style.zIndex = "";
+  console.log("buttonHoverringOff");
+}
+
 for (i = 0; i < hoverButton.length; i++) {
   hoverButton[i].addEventListener("click", function () {
     if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "") {
         document.querySelector(".related-collapse_another").textContent = 'Drop Video';
         localStorage.setItem("Hovering_status", 'on');
-        videotarget.style.position = "fixed";
-        videotargetzindex.style.zIndex = "301";
-        videotargetzindextheatremode.style.zIndex = "301";
-        videotargetzcontrolbar.style.position = "fixed";
-        // videotargetsubtitle.style.position = "fixed";
-        videotargetgradient.style.position = "fixed";
-        // 버튼 호버링 //
-        extensionParent.style.position = "fixed";
-        extensionParent.style.left = "52%";
-        extensionParent.style.bottom = "5%";
-        extensionParent.style.zIndex = "10";
-        // 버튼 호버링 //
+        videoHoveringOn();
+        buttonHoverringOn();
         console.log("Hover on");
       if (videotargetsubtitle) {
         videotargetsubtitle.style.position = "fixed";
@@ -175,18 +196,8 @@ for (i = 0; i < hoverButton.length; i++) {
     } else if (window.location.href.indexOf('youtube.com/watch') > -1 && videotarget .style.position === "fixed"){
       document.querySelector(".related-collapse_another").textContent = 'Hover Video';
       localStorage.setItem("Hovering_status", 'off');
-      videotarget.style.position = "";
-      videotargetzindex.style.zIndex = "10";
-      videotargetzindextheatremode.style.zIndex = "10";
-      videotargetzcontrolbar.style.position = "";
-      // videotargetsubtitle.style.position = "";
-      videotargetgradient.style.position = "";
-      // 버튼 호버링 //
-      extensionParent.style.position = "";
-      extensionParent.style.left = "";
-      extensionParent.style.bottom = "";
-      extensionParent.style.zIndex = "";
-      // 버튼 호버링 //
+      videoHoveringOff();
+      buttonHoverringOff();
       console.log("Hover off");
       if (videotargetsubtitle) {
         videotargetsubtitle.style.position = "";
@@ -197,23 +208,24 @@ for (i = 0; i < hoverButton.length; i++) {
     }
   });
 };
-    if (!window.location.href.indexOf('youtube.com/feed/subscriptions') && localStorage.getItem('Hovering_status') === 'on' && videotarget.style.position === "fixed") {
+
+
+
+
+    if (window.location.href.indexOf('youtube.com/watch') > -1 && localStorage.getItem('Hovering_status') === 'on' && videotarget.style.position === "fixed") {
       setTimeout (function () {
+      buttonHoverringOn();
       document.querySelector(".related-collapse_another").textContent = 'Drop Video';
       console.log ("on");
-    }, 1500)
-      } else if (!window.location.href.indexOf('youtube.com/feed/subscriptions') && localStorage.getItem('Hovering_status') === 'off' && videotarget.style.position === "") {
-        setTimeout (function () {
+    }, 1500);
+  } else if (window.location.href.indexOf('youtube.com/watch') > -1 && localStorage.getItem('Hovering_status') === 'off' && videotarget.style.position === "") {
         document.querySelector(".related-collapse_another").textContent = 'Hover Video';
+        buttonHoverringOff();
         console.log("off");
-        }, 1500)
           } else {
             console.log("hover system broken");
             }
-
-
-
-    if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
+    if (window.location.href.indexOf('youtube.com/watch') > -1 && targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_none') {
       targetStuff.style.display = "none";
       // targetStuff2.style.display = "none";
       // START_IN_THEATER_MODE = "true";
@@ -221,7 +233,8 @@ for (i = 0; i < hoverButton.length; i++) {
       setTimeout(function () {
       autoTheathreModeOn();
       console.log("autoTheathreModeOn3");
-      }, 1500);} else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
+      }, 1500);
+    } else if (window.location.href.indexOf('youtube.com/watch') > -1 &&targetStuff && collapseButton && localStorage.getItem('related_display') === 'display_normal') {
       targetStuff.style.display = "";
       // targetStuff2.style.display = "";
       // START_IN_THEATER_MODE = "false";
