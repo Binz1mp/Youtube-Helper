@@ -21,6 +21,8 @@ Sometimes you may want to remove or disable some related videos and see comments
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-10 20:25 - version 1.1.9.1
+minor big fix
 ### 2022-04-08 18:03 - version 1.1.9
 PIP mode added, code by Google.
 ### 2022-04-08 16:38 - version 1.1.8

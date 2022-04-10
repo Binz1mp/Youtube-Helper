@@ -180,15 +180,15 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
         document
             .querySelector('.collapseParent')
             .style
-            .left = "52%";
+            .left = "50%";
         document
             .querySelector('.collapseParent')
             .style
-            .bottom = "5%";
+            .bottom = "13%";
         document
             .querySelector('.collapseParent')
             .style
-            .zIndex = "10";
+            .zIndex = "601";
         console.log("buttonHoverringOn");
     }
     function buttonHoverringOff() {
