@@ -16,6 +16,7 @@ Sometimes you may want to remove or disable some related videos and see comments
 2. Automatically redirects Youtube Shorts to normal Youtube player's layout. 
 3. Hover Youtube player so that you can scroll down watching video.
 4. Popcat on extension's popup page.
+5. PIP button
 
 ## Devlog (KST, UTC+09:00)
 <details>
