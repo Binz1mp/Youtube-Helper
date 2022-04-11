@@ -11,13 +11,13 @@ The version may differ, I recommend you download it via Github Releases page.
 ## Showcase (Youtube Video)
 [![Showcase (Youtube Video)](https://user-images.githubusercontent.com/96367152/162658122-39d7dc99-a2e0-40ff-9b0e-8ca06a9924a9.png)](https://www.youtube.com/watch?v=BxXAmUqmynY)
 
-Click this image to watch showcase. (if you want)
+Click this logo to watch showcase. (if you want)
 
 ## Features in text
 1. Toggle collapse Youtube related videos.
-2. Automatically redirects Youtube Shorts to normal Youtube player's layout. 
-3. Hover Youtube player so that you can scroll down watching video.
-4. Popcat on extension's popup page.
+2. Automatically redirects Youtube Shorts to normal Youtube player's layout.
+3. Hover Youtube player so that you can scroll down while you watching video.
+4. Popcat on extension's popup page. (and also click sound!)
 5. PIP button
 
 ## Features with image
