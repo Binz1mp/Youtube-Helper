@@ -1,26 +1,29 @@
-toy project no.1, Chrome extension
+Toy project no.1, Chrome extension
 
 # Youtube-Related-Videos-Remover
 Sometimes you may want to remove or disable some related videos and see comments first. This does that.
 
-[Chrome Web Store link (The version may differ, I recommend you download it from Github release.)](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
+[Chrome Web Store link](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
 
-## What it does
+The version may differ, I recommend you download it via Github Releases page.
+
 ### Video Showcase (Youtube)
 [![Showcase (Youtube Video)](https://user-images.githubusercontent.com/96367152/162658122-39d7dc99-a2e0-40ff-9b0e-8ca06a9924a9.png)](https://www.youtube.com/watch?v=BxXAmUqmynY)
 
 Click this image to watch showcase. (if you want)
-### Before (Close Related Videos)
-![001_before](https://user-images.githubusercontent.com/96367152/158127630-8a9fd25e-889d-48c2-9b92-8e8d97221094.png)
-### After (Open Related Videos)
-![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
-## Features
+## What it does
+### Features
 1. Toggle collapse Youtube related videos.
 2. Automatically redirects Youtube Shorts to normal Youtube player's layout. 
 3. Hover Youtube player so that you can scroll down watching video.
 4. Popcat on extension's popup page.
 5. PIP button
+
+### Before (Close Related Videos)
+![001_before](https://user-images.githubusercontent.com/96367152/158127630-8a9fd25e-889d-48c2-9b92-8e8d97221094.png)
+### After (Open Related Videos)
+![002_after](https://user-images.githubusercontent.com/96367152/158127637-719286e7-d0b9-48bd-9a96-133e34567ad4.png)
 
 ## Devlog (KST, UTC+09:00)
 <details>
