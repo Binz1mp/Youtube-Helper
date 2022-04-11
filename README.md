@@ -13,28 +13,29 @@ The version may differ, I recommend you download it via Github Releases page.
 Click this image to watch showcase. (if you want)
 
 ## What it does
-### Features
+### Features in text
 1. Toggle collapse Youtube related videos.
 2. Automatically redirects Youtube Shorts to normal Youtube player's layout. 
 3. Hover Youtube player so that you can scroll down watching video.
 4. Popcat on extension's popup page.
 5. PIP button
 
-### Toggle collapse Youtube related videos.
+### Features with image
+#### Toggle collapse Youtube related videos.
 <details>
   <summary>Click to expand!</summary>
 
 ![001](https://user-images.githubusercontent.com/96367152/162660380-1952b31a-a940-4ce8-85f7-f568df41a0fd.png)
 </details>
 
-### Hover Youtube player so that you can scroll down watching video.
+#### Hover Youtube player so that you can scroll down watching video.
 <details>
   <summary>Click to expand!</summary>
 
 ![002](https://user-images.githubusercontent.com/96367152/162660384-a6adff37-fd38-4d79-add3-384a68d96cae.png)
 </details>
 
-### PIP button
+#### PIP button
 <details>
   <summary>Click to expand!</summary>
 
