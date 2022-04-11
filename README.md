@@ -3,10 +3,12 @@ toy project no.1, Chrome extension
 # Youtube-Related-Videos-Remover
 Sometimes you may want to remove or disable some related videos and see comments first. This does that.
 
-[Chrome web store link](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
+[Chrome Web Store link](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
 
 ## What it does
 ### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BxXAmUqmynY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Showcase (Youtube Video)](https://www.youtube.com/watch?v=BxXAmUqmynY)
 ### Before (Close Related Videos)
 ![001_before](https://user-images.githubusercontent.com/96367152/158127630-8a9fd25e-889d-48c2-9b92-8e8d97221094.png)
