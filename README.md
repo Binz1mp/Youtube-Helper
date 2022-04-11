@@ -20,25 +20,24 @@ Click this image to watch showcase. (if you want)
 4. Popcat on extension's popup page.
 5. PIP button
 
-### Feature Images
-#### Toggle collapse Youtube related videos.
+### Toggle collapse Youtube related videos.
 <details>
   <summary>Click to expand!</summary>
 
 ![001](https://user-images.githubusercontent.com/96367152/162660380-1952b31a-a940-4ce8-85f7-f568df41a0fd.png)
 </details>
 
-#### Hover Youtube player so that you can scroll down watching video.
+### Hover Youtube player so that you can scroll down watching video.
 <details>
   <summary>Click to expand!</summary>
 
 ![002](https://user-images.githubusercontent.com/96367152/162660384-a6adff37-fd38-4d79-add3-384a68d96cae.png)
 </details>
 
-#### PIP button
+### PIP button
 <details>
   <summary>Click to expand!</summary>
-  
+
 ![003](https://user-images.githubusercontent.com/96367152/162660386-0876bbdc-60d3-4245-af96-d3f40f01735f.png)
 </details>
 
