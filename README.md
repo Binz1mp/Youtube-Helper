@@ -7,8 +7,7 @@ Sometimes you may want to remove or disable some related videos and see comments
 
 ## What it does
 ### Video
-<iframe width="640" height="360" src="https://www.youtube.com/watch?v=BxXAmUqmynY" frameborder="0" gesture="media" allowfullscreen=""></iframe>
-
+[Showcase (Youtube Video)](https://www.youtube.com/watch?v=BxXAmUqmynY)
 ### Before (Close Related Videos)
 ![001_before](https://user-images.githubusercontent.com/96367152/158127630-8a9fd25e-889d-48c2-9b92-8e8d97221094.png)
 ### After (Open Related Videos)
