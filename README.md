@@ -1,11 +1,11 @@
 Toy project no.1, Chrome extension
 
 # Youtube-Related-Videos-Remover
-Sometimes you may want to remove or disable some related videos and see comments first. This does that.
+Sometimes you may want to remove or disable some related videos and see comments first. This does that.1
 
 [Chrome Web Store link](https://chrome.google.com/webstore/detail/pnllijckhhmdphamnkihmigimjegedle/)
 
-The version may differ, I recommend you download it via [Github Releases page.](https://github.com/Binz1mp/Youtube-Related-Videos-Remover/releases)
+<!-- The version may differ, I recommend you download it via [Github Releases page.](https://github.com/Binz1mp/Youtube-Related-Videos-Remover/releases) -->
 
 
 ## Showcase (Youtube Video)
