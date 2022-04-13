@@ -1,0 +1,27 @@
+{
+  "name": "Youtube Helper",
+  "description": "Sometimes you may want to remove or disable some related videos and see comments first. This does that.",
+  "version": "1.1.9.2",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"], 
+      "js": ["script_main/content-script.js"],
+      "css" : ["css_main/style-injector.css"]
+    }
+],
+"browser_action" : {
+  "default_icon" : "images/128.png",
+  "default_title" : "Popup",
+  "default_popup" : "popup.html"
+},
+  "web_accessible_resources": [
+      "sfx/popcat.mp3"
+	],
+  "icons": {
+    "16": "/images/16.png",
+    "32": "/images/32.png",
+    "48": "/images/48.png",
+    "128": "/images/128.png"
+  }
+}
