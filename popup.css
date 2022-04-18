@@ -1,0 +1,27 @@
+body {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+.popcat {
+  margin-top: 1em;
+  cursor: pointer;
+  border-radius: 100%;
+  content:url("/images/popcatA.png");
+}
+.popcat:active {
+  content:url("/images/popcatB.png");
+}
+button {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  margin: 10px;
+  border: none;
+  border-radius: 2px;
+}
+
+button.current {
+  box-shadow: 0 0 0 2px white,
+              0 0 0 4px black;
+}
