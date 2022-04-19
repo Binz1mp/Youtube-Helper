@@ -98,7 +98,8 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
     injectElement.innerHTML =`
     <button class="related-collapse">Close Related Videos</button>
     <button class="related-collapse_another">Hover Video</button>
-    <button class="related-collapse_another_another">PIP</button>`;
+    <button class="related-collapse_another_another">PIP</button>
+    <button class="top_button">Top</button>`;
     const insertbeforestuff = document.querySelector("#ticket-shelf");
     if (document.querySelector("#primary-inner")) {
         document
@@ -345,5 +346,11 @@ for (i = 0; i < pipButton.length; i++) {
   });
 };
 
+
+const top_button = document.querySelector(".top_button");
+top_button.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({top:0, behavior: 'smooth'});
+})
 
 });

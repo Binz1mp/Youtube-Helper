@@ -55,7 +55,25 @@
     margin-bottom: 0.5em;
     text-align: center;
   }
-.related-collapse:hover, .related-collapse_another:hover, .related-collapse_another_another:hover {
+  .top_button {
+    flex: 0.25;
+    /* background-color: var(--yt-spec-brand-background-primary) !important; */
+    background-color: transparent;
+    color: var(--ytd-searchbox-text-color) !important;
+    cursor: pointer;
+    padding: 18px;
+    /* width: 30%; */
+    border-left: 1px solid var(--yt-spec-10-percent-layer);
+    border-top: 1px solid var(--yt-spec-10-percent-layer);
+    border-bottom: 1px solid var(--yt-spec-10-percent-layer);
+    border-right: 0px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+.related-collapse:hover, .related-collapse_another:hover, .related-collapse_another_another:hover, .top_button:hover {
   /* background-color: var(--yt-ysm-background) !important; */
   background-color: var(--yt-spec-brand-background-primary) !important;
 }

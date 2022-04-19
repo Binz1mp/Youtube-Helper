@@ -19,6 +19,7 @@ Click this logo to watch showcase. (if you want)
 3. Hover Youtube player so that you can scroll down while you watching video.
 4. Popcat on extension's popup page. (and also click sound!)
 5. PIP button
+6. Top button
 
 ## Features with image
 #### Toggle collapse Youtube related videos.
@@ -46,8 +47,10 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-19 21:28 - version 1.1.9.3
+Top button added, Now you can go to the top by clicking 'Top' button.
 ### 2022-04-13 14:30 - version 1.1.9.2
-Project name changed, Youtuve Related Videos Remover -> Youtube Helper.
+Project name changed, Youtube Related Videos Remover -> Youtube Helper.
 
 Thanks for recommendation!
 ### 2022-04-10 20:25 - version 1.1.9.1
