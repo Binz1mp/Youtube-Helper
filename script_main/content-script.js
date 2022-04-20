@@ -182,7 +182,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
         document
             .querySelector('.collapseParent')
             .style
-            .left = "50%";
+            .left = "49%";
         document
             .querySelector('.collapseParent')
             .style
