@@ -47,6 +47,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-20 09:20 - version 1.1.9.4
+minor bug fix
 ### 2022-04-19 21:28 - version 1.1.9.3
 Top button added, Now you can go to the top by clicking 'Top' button.
 ### 2022-04-13 14:30 - version 1.1.9.2

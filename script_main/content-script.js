@@ -34,6 +34,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
     let collapseButton = document.getElementsByClassName("related-collapse");
     let hoverButton = document.getElementsByClassName("related-collapse_another");
     let pipButton = document.getElementsByClassName("related-collapse_another_another");
+    let topButton = document.getElementsByClassName("top_button");
 
     function autoTheathreModeOn() {
         window.onhashchange = function () {
@@ -95,7 +96,7 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
 
     const targetStuff = document.querySelector("#related");
     var i;
-    injectElement.innerHTML =`
+    injectElement.innerHTML = `
     <button class="related-collapse">Close Related Videos</button>
     <button class="related-collapse_another">Hover Video</button>
     <button class="related-collapse_another_another">PIP</button>
@@ -285,72 +286,82 @@ document.addEventListener('yt-navigate-finish', function collapsibleElement() {
         );
     }
 
-function pipbyGoogle() {
-  function findLargestPlayingVideo() {
-    const videos = Array.from(document.querySelectorAll('video'))
-      .filter(video => video.readyState != 0)
-      .filter(video => video.disablePictureInPicture == false)
-      .sort((v1, v2) => {
-        const v1Rect = v1.getClientRects()[0]||{width:0,height:0};
-        const v2Rect = v2.getClientRects()[0]||{width:0,height:0};
-        return ((v2Rect.width * v2Rect.height) - (v1Rect.width * v1Rect.height));
-      });
-  
-    if (videos.length === 0) {
-      return;
-    }
-    return videos[0];
-  }
-  async function requestPictureInPicture(video) {
-    await video.requestPictureInPicture();
-    video.setAttribute('__pip__', true);
-    video.addEventListener('leavepictureinpicture', event => {
-      video.removeAttribute('__pip__');
-    }, { once: true });
-    new ResizeObserver(maybeUpdatePictureInPictureVideo).observe(video);
-  }
-  function maybeUpdatePictureInPictureVideo(entries, observer) {
-    const observedVideo = entries[0].target;
-    if (!document.querySelector('[__pip__]')) {
-      observer.unobserve(observedVideo);
-      return;
-    }
-    const video = findLargestPlayingVideo();
-    if (video && !video.hasAttribute('__pip__')) {
-      observer.unobserve(observedVideo);
-      requestPictureInPicture(video);
-    }
-  }
-  (async () => {
-    const video = findLargestPlayingVideo();
-    if (!video) {
-      return;
-    }
-    if (video.hasAttribute('__pip__')) {
-      document.exitPictureInPicture();
-      return;
-    }
-    await requestPictureInPicture(video);
-    chrome.runtime.sendMessage({ message: 'enter' });
-  })();
-}
+    function pipbyGoogle() {
+        function findLargestPlayingVideo() {
+            const videos = Array
+                .from(document.querySelectorAll('video'))
+                .filter(video => video.readyState != 0)
+                .filter(video => video.disablePictureInPicture == false)
+                .sort((v1, v2) => {
+                    const v1Rect = v1.getClientRects()[0] || {
+                        width: 0,
+                        height: 0
+                    };
+                    const v2Rect = v2.getClientRects()[0] || {
+                        width: 0,
+                        height: 0
+                    };
+                    return ((v2Rect.width * v2Rect.height) - (v1Rect.width * v1Rect.height));
+                });
 
-for (i = 0; i < pipButton.length; i++) {
-  pipButton[i].addEventListener("click", function () {
-      if (window.location.href.indexOf('youtube.com/watch') > -1) {
-        pipbyGoogle();
-          console.log("PIP mode on");
-      } else {
-          console.log("PIP mode off");
-      }
-  });
-};
+            if (videos.length === 0) {
+                return;
+            }
+            return videos[0];
+        }
+        async function requestPictureInPicture(video) {
+            await video.requestPictureInPicture();
+            video.setAttribute('__pip__', true);
+            video.addEventListener('leavepictureinpicture', event => {
+                video.removeAttribute('__pip__');
+            }, {once: true});
+            new ResizeObserver(maybeUpdatePictureInPictureVideo).observe(video);
+        }
+        function maybeUpdatePictureInPictureVideo(entries, observer) {
+            const observedVideo = entries[0].target;
+            if (!document.querySelector('[__pip__]')) {
+                observer.unobserve(observedVideo);
+                return;
+            }
+            const video = findLargestPlayingVideo();
+            if (video && !video.hasAttribute('__pip__')) {
+                observer.unobserve(observedVideo);
+                requestPictureInPicture(video);
+            }
+        }(async () => {
+            const video = findLargestPlayingVideo();
+            if (!video) {
+                return;
+            }
+            if (video.hasAttribute('__pip__')) {
+                document.exitPictureInPicture();
+                return;
+            }
+            await requestPictureInPicture(video);
+            chrome
+                .runtime
+                .sendMessage({message: 'enter'});
+        })();
+    }
 
+    for (i = 0; i < pipButton.length; i++) {
+        pipButton[i].addEventListener("click", function () {
+            if (window.location.href.indexOf('youtube.com/watch') > -1) {
+                pipbyGoogle();
+                console.log("PIP mode on");
+            } else {
+                console.log("PIP mode off");
+            }
+        });
+    };
 
-const top_button = document.querySelector(".top_button");
-top_button.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({top:0, behavior: 'smooth'});
-})
-
+    for (i = 0; i < topButton.length; i++) {
+            topButton[i].addEventListener('click', function () {
+                if (window.location.href.indexOf('youtube.com/watch') > -1) {
+                preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else {
+                console.log("top button not found");
+            }})
+    };
 });
