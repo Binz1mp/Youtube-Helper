@@ -47,6 +47,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-22 02:43 - version 1.2.0.2
+video description will be shorten automatically.
 ### 2022-04-22 01:15 - version 1.2.0.1
 an issue that some ads cover the button fixed.
 ### 2022-04-21 18:51 - version 1.2.0.0
