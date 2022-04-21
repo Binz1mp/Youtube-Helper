@@ -48,6 +48,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-22 02:43 - version 1.2.0.3
+version 1.2.0.1 adblock function has been seperated.
 ### 2022-04-22 02:43 - version 1.2.0.2
 video description will be shorten automatically.
 ### 2022-04-22 01:15 - version 1.2.0.1
