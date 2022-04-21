@@ -47,6 +47,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-04-21 18:51 - version 1.2.0.0
+major functions are seperated now.
 ### 2022-04-20 09:20 - version 1.1.9.4
 minor bug fix
 ### 2022-04-19 21:28 - version 1.1.9.3
