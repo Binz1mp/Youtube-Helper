@@ -6,7 +6,12 @@
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"], 
-      "js": ["script_main/content-script.js"],
+      "js": ["script_main/content-script.js",
+        "script_main/function_shortstonormal.js",
+        "script_main/button_hover.js",
+        "script_main/button_pip.js",
+        "script_main/button_top.js"
+      ],
       "css" : ["css_main/style-injector.css"]
     }
 ],

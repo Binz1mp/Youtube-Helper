@@ -1,7 +1,7 @@
 .collapseParent {
   display: flex;
 }
-.related-collapse {
+.related_collapse_button {
   flex: 3;
     /* background-color: var(--yt-spec-brand-background-primary) !important; */
     background-color: transparent;
@@ -19,7 +19,7 @@
     /* margin-bottom: 0.5em; */
     text-align: center;
   }
-  .related-collapse_another {
+  .hover_button {
     flex: 2;
     /* background-color: var(--yt-spec-brand-background-primary) !important; */
     background-color: transparent;
@@ -37,7 +37,7 @@
     /* margin-bottom: 0.5em; */
     text-align: center;
   }
-  .related-collapse_another_another {
+  .pip_button {
     flex: 1;
     /* background-color: var(--yt-spec-brand-background-primary) !important; */
     background-color: transparent;
@@ -73,7 +73,7 @@
     /* margin-bottom: 0.5em; */
     text-align: center;
   }
-.related-collapse:hover, .related-collapse_another:hover, .related-collapse_another_another:hover, .top_button:hover {
+.related_collapse_button:hover, .hover_button:hover, .pip_button:hover, .top_button:hover {
   /* background-color: var(--yt-ysm-background) !important; */
   background-color: var(--yt-spec-brand-background-primary) !important;
 }
