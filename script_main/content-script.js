@@ -96,7 +96,7 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         "#primary-inner > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"
       )
     ) {
-      console.log("oh there are more than one elements.");
+      console.log("we found any ads which cover our button.");
       document
         .querySelector(
           "#primary-inner > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"
