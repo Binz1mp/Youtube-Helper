@@ -20,6 +20,7 @@ Click this logo to watch showcase. (if you want)
 4. Popcat on extension's popup page. (and also click sound!)
 5. PIP button
 6. Top button
+7. Video description shortener
 
 ## Features with image
 #### Toggle collapse Youtube related videos.
