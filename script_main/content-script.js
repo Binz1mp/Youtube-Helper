@@ -1,8 +1,10 @@
 document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   const injectElement = document.createElement("div");
   injectElement.classList.add("collapseParent");
-  
-  let collapseButton = document.getElementsByClassName("related_collapse_button");
+
+  let collapseButton = document.getElementsByClassName(
+    "related_collapse_button"
+  );
   const targetStuff = document.querySelector("#related");
   const extensionParent = document.querySelector(".collapseParent");
   var i;
@@ -87,6 +89,23 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   } else {
     console.log("seems like normal?");
   }
+
+  setTimeout(function () {
+    if (
+      document.querySelector(
+        "#primary-inner > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"
+      )
+    ) {
+      console.log("oh there are more than one elements.");
+      document
+        .querySelector(
+          "#primary-inner > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy"
+        )
+        .remove();
+    } else {
+      console.log("we haven't found any ads which cover our button.");
+    }
+  }, 1500);
 
   for (i = 0; i < collapseButton.length; i++) {
     collapseButton[i].addEventListener("click", function () {
