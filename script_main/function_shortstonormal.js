@@ -14,7 +14,7 @@ window.onload = function () {
         console.log("location changed!");
         if (window.location.href.indexOf("youtube.com/shorts") > -1) {
           window.location.replace(
-            window.location.toString().replace(/shorts/, "/watch/")
+window.location.toString().replace(/shorts/, "/watch/")
           );
         }
       }
