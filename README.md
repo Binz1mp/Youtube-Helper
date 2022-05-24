@@ -30,6 +30,13 @@ Click this logo to watch showcase. (if you want)
 ![001](https://user-images.githubusercontent.com/96367152/162660380-1952b31a-a940-4ce8-85f7-f568df41a0fd.png)
 </details>
 
+#### Automatically redirects Youtube Shorts to normal Youtube player's layout.
+<details>
+  <summary>Click to expand!</summary>
+
+![001](https://user-images.githubusercontent.com/96367152/169981712-9bf3f272-6941-4d82-aef0-f496c402762f.png)
+</details>
+
 #### Hover Youtube player so that you can scroll down watching video.
 <details>
   <summary>Click to expand!</summary>
