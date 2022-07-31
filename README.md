@@ -55,6 +55,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-07-31 19:17 - version 1.2.0.5
+bug not showing navigation bar fixed.
 ### 2022-04-24 02:25 - version 1.2.0.4
 minor bug fixed
 ### 2022-04-22 02:43 - version 1.2.0.3

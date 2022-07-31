@@ -64,8 +64,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     <button class="pip_button">PIP</button>
     <button class="top_button">Top</button>`;
   const insertbeforestuff = document.querySelector("#ticket-shelf");
-  if (document.querySelector("#primary-inner")) {
-    document.querySelector("#primary-inner").insertBefore(injectElement, insertbeforestuff);
+  if (document.querySelector("#below")) {
+    document.querySelector("#below").insertBefore(injectElement, insertbeforestuff);
   } else {
     console.log("Hello!");
   }
