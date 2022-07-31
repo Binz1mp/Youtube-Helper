@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  background-color: #131313;
+}
+div {
+  font-size: 14px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+}
+.greetings {
+  color: #a39d9d;
+}
+.howto {
+  color: rgb(156, 134, 106);
+}
+.updatelog {
+  color: rgb(123, 167, 235);
+}
+.knownissues {
+  color: #da7e7e;
+}
+#mainlogo {
+  transition: all ease 0.5s;
+}
+#mainlogo:hover {
+  transform: rotate(360deg);
+}
+h3 span {
+  border-bottom: 1px solid #a39d9d;
+}
