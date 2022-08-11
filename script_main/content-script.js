@@ -6,9 +6,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     "related_collapse_button"
   );
   const targetStuff = document.querySelector("#related");
-  const extensionParent = document.querySelector(".collapseParent");
   var i;
-
+  
   function autoTheathreModeOn() {
     window.onhashchange = function () {
       if (window.location.href.indexOf("youtube.com/watch") > -1) {
@@ -57,31 +56,43 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
       }
     }
   }
-
+  
   injectElement.innerHTML = `
-    <button class="related_collapse_button">Close Related Videos</button>
-    <button class="hover_button">Hover Video</button>
-    <button class="pip_button">PIP</button>
-    <button class="top_button">Top</button>`;
+  <button class="related_collapse_button">Close Related Videos</button>
+  <button class="hover_button">Hover Video</button>
+  <button class="pip_button">PIP</button>
+  <button class="top_button">Top</button>`;
   const insertbeforestuff = document.querySelector("#ticket-shelf");
   if (document.querySelector("#below")) {
     document.querySelector("#below").insertBefore(injectElement, insertbeforestuff);
+    setTimeout(() => {
+      if (document.querySelector("#below > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy")) {
+        const blackline = document.querySelector("#below > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy");
+        blackline.remove();
+      }
+    }, 2500);
+    
+    
+    
+    
   } else {
     console.log("Hello!");
   }
-
+  
   if (document.getElementsByClassName("collapseParent").length >= 2) {
+    const extensionParent = document.querySelector(".collapseParent");
     console.log("oh there are more than one elements.");
-    document.querySelector(".collapseParent").parentNode.removeChild(extensionParent);
+    // document.querySelector(".collapseParent").parentNode.removeChild(extensionParent);
+    extensionParent.remove();
     console.log("killed duplicated button");
   } else {
     console.log("seems like normal?");
   }
-
+  
   for (i = 0; i < collapseButton.length; i++) {
     collapseButton[i].addEventListener("click", function () {
       if (window.location.href.indexOf("youtube.com/watch") > -1 &&
-        targetStuff.style.display === ""
+      targetStuff.style.display === ""
         ) {
         targetStuff.style.display = "none";
         localStorage.setItem("related_display", "display_none");
