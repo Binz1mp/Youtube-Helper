@@ -55,6 +55,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-08-13 14:04 - version 1.2.0.6.1
+Patreon link removed, why not? :)
 ### 2022-08-11 14:04 - version 1.2.0.6
 a black line over the navigation bar removed.
 ### 2022-07-31 19:17 - version 1.2.0.5
