@@ -52,6 +52,11 @@ Click this logo to watch showcase. (if you want)
 </details>
 
 ## Devlog (KST, UTC+09:00)
+
+### 2022-09-21 02:40 - version 1.2.1.2
+You can now hide all the right blank after you click 'Remove Right Blank' button.
+But this function does similar thing like 'Close Related Videos' button.
+
 <details>
   <summary>Click to expand!</summary>
 

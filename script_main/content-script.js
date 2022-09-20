@@ -2,12 +2,9 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   const injectElement = document.createElement("div");
   injectElement.classList.add("collapseParent");
 
-  let collapseButton = document.getElementsByClassName(
-    "related_collapse_button"
-  );
+  let collapseButton = document.getElementsByClassName("related_collapse_button");
   const targetStuff = document.querySelector("#related");
   var i;
-  const secondaryId = document.querySelector('#secondary');
   function autoTheathreModeOn() {
     window.onhashchange = function () {
       if (window.location.href.indexOf("youtube.com/watch") > -1) {
@@ -59,6 +56,7 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   
   injectElement.innerHTML = `
   <button class="related_collapse_button">Close Related Videos</button>
+  <button class="remove_right_blank">Remove Right Blank</button>
   <button class="hover_button">Hover Video</button>
   <button class="pip_button">PIP</button>
   <button class="top_button">Top</button>`;
@@ -71,10 +69,6 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         blackline.remove();
       }
     }, 2500);
-    
-    
-    
-    
   } else {
     console.log("Hello!");
   }
@@ -95,7 +89,6 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
       targetStuff.style.display === ""
         ) {
         targetStuff.style.display = "none";
-        // secondaryId.style.display = "none";
         localStorage.setItem("related_display", "display_none");
         document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
         console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem("related_display"));
@@ -103,7 +96,6 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         console.log("on");
       } else {
         targetStuff.style.display = "";
-        // secondaryId.style.display = "";
         localStorage.setItem("related_display", "display_normal");
         console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem("related_display"));
         document.querySelector(".related_collapse_button").textContent = "Close Related Videos";

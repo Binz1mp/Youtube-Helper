@@ -19,6 +19,24 @@
   /* margin-bottom: 0.5em; */
   text-align: center;
 }
+.remove_right_blank {
+  flex: 2;
+  /* background-color: var(--yt-spec-brand-background-primary) !important; */
+  background-color: transparent;
+  color: var(--ytd-searchbox-text-color) !important;
+  cursor: pointer;
+  padding: 15px;
+  /* width: 30%; */
+  border-left: 1px solid var(--yt-spec-10-percent-layer);
+  border-top: 1px solid var(--yt-spec-10-percent-layer);
+  border-bottom: 1px solid var(--yt-spec-10-percent-layer);
+  border-right: 0px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  /* margin-bottom: 0.5em; */
+  text-align: center;
+}
 .hover_button {
   flex: 2;
   /* background-color: var(--yt-spec-brand-background-primary) !important; */
@@ -74,6 +92,7 @@
   text-align: center;
 }
 .related_collapse_button:hover,
+.remove_right_blank:hover,
 .hover_button:hover,
 .pip_button:hover,
 .top_button:hover {
