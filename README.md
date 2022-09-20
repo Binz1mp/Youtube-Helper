@@ -55,6 +55,8 @@ Click this logo to watch showcase. (if you want)
 <details>
   <summary>Click to expand!</summary>
 
+### 2022-09-20 23:35 - version 1.2.1.1
+Rollback because of some error. Sorry.
 ### 2022-09-20 18:42 - version 1.2.1.0
 When you click the 'Close Related Videos' button, the right blank will be gone!
 ### 2022-08-13 14:04 - version 1.2.0.61
