@@ -53,6 +53,9 @@ Click this logo to watch showcase. (if you want)
 
 ## Devlog (KST, UTC+09:00)
 
+### 2022-09-21 03:10 - version 1.2.1.3
+minor bug fixed
+
 ### 2022-09-21 02:40 - version 1.2.1.2
 You can now hide all the right blank after you click 'Remove Right Blank' button.
 

@@ -112,7 +112,6 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("related_display") === "display_none"
     ) {
     targetStuff.style.display = "none";
-    // secondaryId.style.display = "none";
     document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
     setTimeout(function () {
       autoTheathreModeOn();
@@ -125,7 +124,6 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("related_display") === "display_normal"
   ) {
     targetStuff.style.display = "";
-    // secondaryId.style.display = "";
     document.querySelector(".related_collapse_button").textContent = "Close Related Videos";
   } else {
     console.log("Now you are in the lobby. which means there's no button to modify now.");
