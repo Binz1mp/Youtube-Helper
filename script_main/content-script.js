@@ -1,4 +1,12 @@
 document.addEventListener("yt-navigate-finish", function collapsibleElement() {
+  /**
+ * localizing function
+ * @param {"string"} messageName 
+ * @returns localized text
+ */
+    function getLocalMessage(messageName) {
+    return chrome.i18n.getMessage(messageName);
+  }
   const injectElement = document.createElement("div");
   injectElement.classList.add("collapseParent");
 
@@ -90,7 +98,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         ) {
         targetStuff.style.display = "none";
         localStorage.setItem("related_display", "display_none");
-        document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
+        // document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
+        document.querySelector(".related_collapse_button").textContent = getLocalMessage("relatedVideo_on");
         console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem("related_display"));
         autoTheathreModeOn();
         console.log("on");
@@ -98,7 +107,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         targetStuff.style.display = "";
         localStorage.setItem("related_display", "display_normal");
         console.log("버튼클릭 로컬스토리지 = " + localStorage.getItem("related_display"));
-        document.querySelector(".related_collapse_button").textContent = "Close Related Videos";
+        // document.querySelector(".related_collapse_button").textContent = "Close Related Videos";
+        document.querySelector(".related_collapse_button").textContent = getLocalMessage("relatedVideo_off");
         autoTheathreModeOff();
         console.log("off");
       }
@@ -112,7 +122,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("related_display") === "display_none"
     ) {
     targetStuff.style.display = "none";
-    document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
+    // document.querySelector(".related_collapse_button").textContent = "Open Related Videos";
+    document.querySelector(".related_collapse_button").textContent = getLocalMessage("relatedVideo_on");
     setTimeout(function () {
       autoTheathreModeOn();
       console.log("autoTheathreModeOn3");
@@ -124,7 +135,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("related_display") === "display_normal"
   ) {
     targetStuff.style.display = "";
-    document.querySelector(".related_collapse_button").textContent = "Close Related Videos";
+    // document.querySelector(".related_collapse_button").textContent = "Close Related Videos";
+    document.querySelector(".related_collapse_button").textContent = getLocalMessage("relatedVideo_off");
   } else {
     console.log("Now you are in the lobby. which means there's no button to modify now.");
   }

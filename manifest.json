@@ -1,8 +1,9 @@
 {
   "name": "Youtube Helper",
   "description": "Sometimes you may want to remove or disable some related videos and see comments first. This does that.",
-  "version": "1.2.1.3",
+  "version": "1.2.2.0",
   "manifest_version": 3,
+  "default_locale": "en",
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"], 

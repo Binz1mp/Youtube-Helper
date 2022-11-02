@@ -1,0 +1,20 @@
+{
+  "hover_on" : {
+    "message" : "Drop Video"
+  },
+  "hover_off" : {
+    "message" : "Hover Video"
+  },
+  "rightBlank_on" : {
+    "message" : "Reveal Right Blank"
+  },
+  "rightBlank_off" : {
+    "message" : "Remove Right Blank"
+  },
+  "relatedVideo_on" : {
+    "message" : "Open Related Videos"
+  },
+  "relatedVideo_off" : {
+    "message" : "Close Related Videos"
+  }
+}

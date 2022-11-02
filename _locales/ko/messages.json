@@ -1,0 +1,20 @@
+{
+  "hover_on" : {
+    "message" : "비디오 위치 복구"
+  },
+  "hover_off" : {
+    "message" : "비디오 위치 고정"
+  },
+  "rightBlank_on" : {
+    "message" : "오른쪽 공백 나타내기"
+  },
+  "rightBlank_off" : {
+    "message" : "오른쪽 공백 지우기"
+  },
+  "relatedVideo_on" : {
+    "message" : "관련 영상 나타내기"
+  },
+  "relatedVideo_off" : {
+    "message" : "관련 영상 지우기"
+  }
+}

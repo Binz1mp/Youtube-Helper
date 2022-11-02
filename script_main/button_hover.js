@@ -1,4 +1,12 @@
 document.addEventListener("yt-navigate-finish", function collapsibleElement() {
+  /**
+   * localizing function
+   * @param {"string"} messageName 
+   * @returns localized text
+   */
+  function getLocalMessage(messageName) {
+    return chrome.i18n.getMessage(messageName);
+  }
   let hoverButton = document.getElementsByClassName("hover_button");
 
   const videotarget = document.querySelector(".html5-video-container");
@@ -51,7 +59,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         window.location.href.indexOf("youtube.com/watch") > -1 &&
         videotarget.style.position === ""
       ) {
-        document.querySelector(".hover_button").textContent = "Drop Video";
+        // document.querySelector(".hover_button").textContent = "Drop Video";
+        document.querySelector(".hover_button").textContent = getLocalMessage("hover_on");
         localStorage.setItem("Hovering_status", "on");
         videoHoveringOn();
         buttonHoverringOn();
@@ -66,7 +75,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
         window.location.href.indexOf("youtube.com/watch") > -1 &&
         videotarget.style.position === "fixed"
       ) {
-        document.querySelector(".hover_button").textContent = "Hover Video";
+        // document.querySelector(".hover_button").textContent = "Hover Video";
+        document.querySelector(".hover_button").textContent = getLocalMessage("hover_off");
         localStorage.setItem("Hovering_status", "off");
         videoHoveringOff();
         buttonHoverringOff();
@@ -90,7 +100,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   ) {
     // setTimeout(function () {
     buttonHoverringOn();
-    document.querySelector(".hover_button").textContent = "Drop Video";
+    // document.querySelector(".hover_button").textContent = "Drop Video";
+    document.querySelector(".hover_button").textContent = getLocalMessage("hover_on");
     console.log("on");
     // }, 1500);
   } else if (
@@ -98,7 +109,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("Hovering_status") === "off" &&
     videotarget.style.position === ""
   ) {
-    document.querySelector(".hover_button").textContent = "Hover Video";
+    // document.querySelector(".hover_button").textContent = "Hover Video";
+    document.querySelector(".hover_button").textContent = getLocalMessage("hover_off");
     buttonHoverringOff();
     console.log("off");
   } else {

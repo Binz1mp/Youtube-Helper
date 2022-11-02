@@ -1,4 +1,12 @@
 document.addEventListener("yt-navigate-finish", function collapsibleElement() {
+  /**
+ * localizing function
+ * @param {"string"} messageName 
+ * @returns localized text
+ */
+    function getLocalMessage(messageName) {
+    return chrome.i18n.getMessage(messageName);
+  }
   let removeRightButton = document.getElementsByClassName("remove_right_blank");
   const secondaryId = document.querySelector('#columns > #secondary');
   var i;
@@ -57,13 +65,15 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
       ) {
         secondaryId.style.display = "none";
         autoTheathreModeOn()
-        document.querySelector(".remove_right_blank").textContent = "Reveal Right Blank";
+        // document.querySelector(".remove_right_blank").textContent = "Reveal Right Blank";
+        document.querySelector(".remove_right_blank").textContent = getLocalMessage("rightBlank_on");
         localStorage.setItem("right_blank_display", "display_none");
         console.log('button_removerightblank.js - 1');
         } else {
           secondaryId.style.display = "";
           autoTheathreModeOff()
-          document.querySelector(".remove_right_blank").textContent = "Remove Right Blank";
+          // document.querySelector(".remove_right_blank").textContent = "Remove Right Blank";
+          document.querySelector(".remove_right_blank").textContent = getLocalMessage("rightBlank_off");
           localStorage.setItem("right_blank_display", "display_normal");
           console.log('button_removerightblank.js - 2');
         }
@@ -76,7 +86,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("right_blank_display") === "display_none"
     ) {
     secondaryId.style.display = "none";
-    document.querySelector(".remove_right_blank").textContent = "Reveal Right Blank";
+    // document.querySelector(".remove_right_blank").textContent = "Reveal Right Blank";
+    document.querySelector(".remove_right_blank").textContent = getLocalMessage("rightBlank_on");
     setTimeout(function () {
       autoTheathreModeOn();
       console.log("autoTheathreModeOn3");
@@ -89,7 +100,8 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     localStorage.getItem("right_blank_display") === "display_normal"
   ) {
     secondaryId.style.display = "";
-    document.querySelector(".remove_right_blank").textContent = "Remove Right Blank";
+    // document.querySelector(".remove_right_blank").textContent = "Remove Right Blank";
+    document.querySelector(".remove_right_blank").textContent = getLocalMessage("rightBlank_off");
     console.log('button_removerightblank.js - 4');
   } else {
     console.log("Now you are in the lobby. which means there's no button to modify now.");
