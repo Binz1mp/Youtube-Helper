@@ -46,7 +46,7 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     collapseButton.style.position = "fixed";
     collapseButton.style.left = "49%";
     collapseButton.style.bottom = "13%";
-    collapseButton.style.zIndex = "601";
+    collapseButton.style.zIndex = "602";
     console.log("buttonHoverringOn");
     collapseButton.id = 'hovering';
     // document.querySelector(".hover_controller").id = 'now_hovering';
