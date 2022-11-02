@@ -52,8 +52,11 @@ Click this logo to watch showcase. (if you want)
 </details>
 
 ## Devlog (KST, UTC+09:00)
+# EN : https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_en.html
 
-### 2022-09-21 03:10 - version 1.2.1.3
+# KR : https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_ko.html
+
+<!-- ### 2022-09-21 03:10 - version 1.2.1.3
 minor bug fixed
 
 ### 2022-09-21 02:40 - version 1.2.1.2
@@ -144,4 +147,4 @@ localstorage done, now even if you reload the browser, closed/open button value 
 Now collapse function works, but I need to make some to remain the collapsed status even after I reload the site.
 
 Maybe I need to know how to deal with localStorage stuff.
-</details>
+</details> -->
