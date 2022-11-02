@@ -67,14 +67,15 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
   <button class="remove_right_blank">Remove Right Blank</button>
   <button class="hover_button">Hover Video</button>
   <button class="pip_button">PIP</button>
-  <button class="top_button">Top</button>`;
-  const insertbeforestuff = document.querySelector("#ticket-shelf");
+  <button class="top_button">Top</button>
+  <button class="hover_controller">+</button>`;
+  const insertBeforeStuff = document.querySelector("#ticket-shelf");
   if (document.querySelector("#below")) {
-    document.querySelector("#below").insertBefore(injectElement, insertbeforestuff);
+    document.querySelector("#below").insertBefore(injectElement, insertBeforeStuff);
     setTimeout(() => {
       if (document.querySelector("#below > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy")) {
-        const blackline = document.querySelector("#below > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy");
-        blackline.remove();
+        const blackLine = document.querySelector("#below > ytd-merch-shelf-renderer.style-scope.ytd-watch-flexy");
+        blackLine.remove();
       }
     }, 2500);
   } else {
