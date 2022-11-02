@@ -52,9 +52,10 @@ Click this logo to watch showcase. (if you want)
 </details>
 
 ## Devlog (KST, UTC+09:00)
-# EN : https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_en.html
-
-# KR : https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_ko.html
+# EN
+[HERE](https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_en.html)
+# KR
+[HERE](https://github.com/Binz1mp/Youtube-Helper/blob/master/changelog/update_ko.html)
 
 <!-- ### 2022-09-21 03:10 - version 1.2.1.3
 minor bug fixed
