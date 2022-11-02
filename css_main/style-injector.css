@@ -21,6 +21,19 @@
   /* background-color: var(--yt-ysm-background) !important; */
   background-color: var(--yt-spec-button-chip-background-hover);
 }
+/* .collapseParent > button:not(:first-child, :nth-child(2)) {
+  margin-left: 10px;
+}
+.collapseParent > button:first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: 1px solid var(--yt-spec-10-percent-layer);
+}
+.collapseParent > button:nth-child(2) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+} */
+
 .collapseParent > button:not(:first-child) {
   margin-left: 10px;
 }
