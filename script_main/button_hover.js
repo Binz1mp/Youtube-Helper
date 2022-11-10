@@ -71,26 +71,30 @@ document.addEventListener("yt-navigate-finish", function collapsibleElement() {
     document.querySelector(".hover_controller").setAttribute('id', "");
   }
 
-  const hoverController = document.querySelector(".hover_controller");
-  hoverController.addEventListener("click", function () {
-    if (localStorage.getItem("Hovering_status") === "on" &&
-    collapseButton.children[0].id == 'now_hovering_but_hidden') {
-      console.log("111111111111111111111111111");
-      collapseButton.children[0].removeAttribute('id');
-      collapseButton.children[1].removeAttribute('id');
-      collapseButton.children[2].removeAttribute('id');
-      collapseButton.children[3].removeAttribute('id');
-      collapseButton.children[4].removeAttribute('id');
-    }
-    else {
-      console.log("2222222222222222222222222222222");
-      collapseButton.children[0].id = 'now_hovering_but_hidden';
-      collapseButton.children[1].id = 'now_hovering_but_hidden';
-      collapseButton.children[2].id = 'now_hovering_but_hidden';
-      collapseButton.children[3].id = 'now_hovering_but_hidden';
-      collapseButton.children[4].id = 'now_hovering_but_hidden';
-    }
-  });
+  try {
+    const hoverController = document.querySelector(".hover_controller");
+    hoverController.addEventListener("click", function () {
+      if (localStorage.getItem("Hovering_status") === "on" &&
+      collapseButton.children[0].id == 'now_hovering_but_hidden') {
+        console.log("111111111111111111111111111");
+        collapseButton.children[0].removeAttribute('id');
+        collapseButton.children[1].removeAttribute('id');
+        collapseButton.children[2].removeAttribute('id');
+        collapseButton.children[3].removeAttribute('id');
+        collapseButton.children[4].removeAttribute('id');
+      }
+      else {
+        console.log("2222222222222222222222222222222");
+        collapseButton.children[0].id = 'now_hovering_but_hidden';
+        collapseButton.children[1].id = 'now_hovering_but_hidden';
+        collapseButton.children[2].id = 'now_hovering_but_hidden';
+        collapseButton.children[3].id = 'now_hovering_but_hidden';
+        collapseButton.children[4].id = 'now_hovering_but_hidden';
+      }
+    });
+  } catch (error) {
+    console.log("hoverControllerError = " + error);
+  }
 
   for (i = 0; i < hoverButton.length; i++) {
     hoverButton[i].addEventListener("click", function () {
