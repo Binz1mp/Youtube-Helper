@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Youtube Helper</title>
     <link rel="stylesheet" href="popup.css">
-    <script src="script_main/content-script.js"></script>
+    <script src="popup.js" defer></script>
   </head>
   <body>
-    <img class="popcat" alt="popcatBtn" title="누르지마셈">
-    <a href="https://github.com/Binz1mp/Youtube-Helper" target="_blank">Github</a>
-    <script src="popup.js"></script>
+    <header class="popup-header">
+      <button class="popcat" type="button" aria-label="Popcat" title="Popcat">
+        <img src="images/popcatA.png" alt="" width="48" height="48">
+      </button>
+      <div>
+        <h1>Youtube Helper</h1>
+        <p data-i18n="popupTagline">Your viewing preferences</p>
+      </div>
+    </header>
+    <main>
+      <h2 data-i18n="popupPlayback">Playback</h2>
+      <label class="setting" for="shorts-as-videos">
+        <span class="setting-copy">
+          <span class="setting-title" id="shorts-label" data-i18n="shortsOptionLabel">Open Shorts as videos</span>
+          <span class="setting-description" id="shorts-description" data-i18n="shortsOptionDescription">Convert Shorts links and open them in the regular player.</span>
+        </span>
+        <input id="shorts-as-videos" type="checkbox" role="switch" aria-labelledby="shorts-label" aria-describedby="shorts-description" disabled>
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+      <p class="save-status" role="status" aria-live="polite" data-i18n="popupChangesHint">Changes apply to open YouTube tabs.</p>
+    </main>
+    <footer>
+      <span>Youtube Helper</span>
+      <a href="https://github.com/Binz1mp/Youtube-Helper" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
   </body>
 </html>

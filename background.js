@@ -10,22 +10,22 @@ chrome.runtime.onInstalled.addListener(function (details) {
     case 'install':
       if (lang == "ko") {
         chrome.tabs.create({
-          url: chrome.runtime.getURL("changelog/update_ko.html"),
+          url: chrome.runtime.getURL("updatenote/update_ko.html"),
         });
       } else {
         chrome.tabs.create({
-          url: chrome.runtime.getURL("changelog/update_en.html"),
+          url: chrome.runtime.getURL("updatenote/update_en.html"),
         });
       }
       break;
     case 'update':
       if (lang == "ko") {
         chrome.tabs.create({
-          url: chrome.runtime.getURL("changelog/update_ko.html"),
+          url: chrome.runtime.getURL("updatenote/update_ko.html"),
         });
       } else {
         chrome.tabs.create({
-          url: chrome.runtime.getURL("changelog/update_en.html"),
+          url: chrome.runtime.getURL("updatenote/update_en.html"),
         });
       }
       break;

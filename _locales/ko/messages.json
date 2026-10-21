@@ -1,20 +1,86 @@
 {
-  "hover_on" : {
-    "message" : "비디오 위치 복구"
+  "hover_on": {
+    "message": "고정 해제"
   },
-  "hover_off" : {
-    "message" : "비디오 위치 고정"
+  "hover_off": {
+    "message": "영상 고정"
   },
-  "rightBlank_on" : {
-    "message" : "오른쪽 공백 나타내기"
+  "rightBlank_on": {
+    "message": "기본 너비"
   },
-  "rightBlank_off" : {
-    "message" : "오른쪽 공백 지우기"
+  "rightBlank_off": {
+    "message": "넓게 보기"
   },
-  "relatedVideo_on" : {
-    "message" : "관련 영상 나타내기"
+  "relatedVideo_on": {
+    "message": "관련 영상 표시"
   },
-  "relatedVideo_off" : {
-    "message" : "관련 영상 지우기"
+  "relatedVideo_off": {
+    "message": "관련 영상 숨기기"
+  },
+  "helperToolbar": {
+    "message": "시청 도구"
+  },
+  "pipButton": {
+    "message": "PIP"
+  },
+  "pipExit": {
+    "message": "PIP 종료"
+  },
+  "topButton": {
+    "message": "맨 위로"
+  },
+  "floatingTitle": {
+    "message": "고정 플레이어"
+  },
+  "floatingRestore": {
+    "message": "원래 위치로"
+  },
+  "pipError": {
+    "message": "PIP를 시작하지 못했습니다. 영상을 재생한 뒤 다시 시도해 주세요."
+  },
+  "expandTools": {
+    "message": "시청 도구 펼치기"
+  },
+  "collapseTools": {
+    "message": "시청 도구 접기"
+  },
+  "miniPlayerTitle": {
+    "message": "작은 플레이어"
+  },
+  "dragPlayer": {
+    "message": "상단 바를 드래그하거나 방향키로 플레이어 이동"
+  },
+  "resizePlayer": {
+    "message": "모서리를 드래그하거나 방향키로 크기 조절"
+  },
+  "captionSize": {
+    "message": "자막 크기"
+  },
+  "captionReset": {
+    "message": "자막 크기 초기화"
+  },
+  "popupTagline": {
+    "message": "나에게 맞는 시청 설정"
+  },
+  "popupPlayback": {
+    "message": "재생 설정"
+  },
+  "shortsOptionLabel": {
+    "message": "Shorts를 일반 영상으로 보기"
+  },
+  "shortsOptionDescription": {
+    "message": "Shorts 링크를 변환하고 일반 플레이어로 자동 이동합니다."
+  },
+  "popupChangesHint": {
+    "message": "열려 있는 YouTube 탭에도 바로 적용됩니다."
+  },
+  "popupSaved": {
+    "message": "저장했습니다. 열려 있는 YouTube 탭에도 적용됩니다."
+  },
+  "popupLoadError": {
+    "message": "설정을 불러오지 못했습니다. 팝업을 다시 열어 주세요."
+  },
+  "popupSaveError": {
+    "message": "저장하지 못했습니다. 이전 설정을 유지합니다."
   }
 }

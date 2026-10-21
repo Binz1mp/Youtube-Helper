@@ -1,20 +1,86 @@
 {
-  "hover_on" : {
-    "message" : "Drop Video"
+  "hover_on": {
+    "message": "Unpin video"
   },
-  "hover_off" : {
-    "message" : "Hover Video"
+  "hover_off": {
+    "message": "Pin video"
   },
-  "rightBlank_on" : {
-    "message" : "Reveal Right Blank"
+  "rightBlank_on": {
+    "message": "Default layout"
   },
-  "rightBlank_off" : {
-    "message" : "Remove Right Blank"
+  "rightBlank_off": {
+    "message": "Wide layout"
   },
-  "relatedVideo_on" : {
-    "message" : "Open Related Videos"
+  "relatedVideo_on": {
+    "message": "Show related"
   },
-  "relatedVideo_off" : {
-    "message" : "Close Related Videos"
+  "relatedVideo_off": {
+    "message": "Hide related"
+  },
+  "helperToolbar": {
+    "message": "Viewing tools"
+  },
+  "pipButton": {
+    "message": "PIP"
+  },
+  "pipExit": {
+    "message": "Exit PIP"
+  },
+  "topButton": {
+    "message": "Back to top"
+  },
+  "floatingTitle": {
+    "message": "Pinned player"
+  },
+  "floatingRestore": {
+    "message": "Restore player"
+  },
+  "pipError": {
+    "message": "Could not start PIP. Play the video and try again."
+  },
+  "expandTools": {
+    "message": "Expand viewing tools"
+  },
+  "collapseTools": {
+    "message": "Collapse viewing tools"
+  },
+  "miniPlayerTitle": {
+    "message": "Mini player"
+  },
+  "dragPlayer": {
+    "message": "Drag the title bar or use arrow keys to move the player"
+  },
+  "resizePlayer": {
+    "message": "Drag the corner or use arrow keys to resize the player"
+  },
+  "captionSize": {
+    "message": "Subtitle size"
+  },
+  "captionReset": {
+    "message": "Reset subtitle size"
+  },
+  "popupTagline": {
+    "message": "Your viewing preferences"
+  },
+  "popupPlayback": {
+    "message": "Playback"
+  },
+  "shortsOptionLabel": {
+    "message": "Open Shorts as videos"
+  },
+  "shortsOptionDescription": {
+    "message": "Convert Shorts links and open them in the regular player."
+  },
+  "popupChangesHint": {
+    "message": "Changes apply to open YouTube tabs."
+  },
+  "popupSaved": {
+    "message": "Saved. Applies to open YouTube tabs."
+  },
+  "popupLoadError": {
+    "message": "Could not load settings. Reopen this popup to try again."
+  },
+  "popupSaveError": {
+    "message": "Could not save. Your previous setting is still active."
   }
 }

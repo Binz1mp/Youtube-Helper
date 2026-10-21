@@ -1,16 +1,18 @@
 {
   "name": "Youtube Helper",
   "description": "Sometimes you may want to remove or disable some related videos and see comments first. This does that.",
-  "version": "1.2.2.5",
+  "version": "2.0.0",
   "manifest_version": 3,
   "default_locale": "en",
+  "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"], 
+      "matches": ["https://www.youtube.com/*"],
       "js": [
         "script_main/content-script.js",
         "script_main/button_removerightblank.js",
         "script_main/button_hover.js",
+        "script_main/function_captions.js",
         "script_main/button_pip.js",
         "script_main/button_top.js",
         "script_main/function_makeitless.js",
