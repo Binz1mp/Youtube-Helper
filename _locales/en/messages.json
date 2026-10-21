@@ -65,6 +65,24 @@
   "popupPlayback": {
     "message": "Playback"
   },
+  "popupLayout": {
+    "message": "Layout"
+  },
+  "hideRelatedOptionLabel": {
+    "message": "Hide related videos"
+  },
+  "fabOptionLabel": {
+    "message": "Show floating tools button"
+  },
+  "fabOptionDescription": {
+    "message": "The button row stays available when this is off."
+  },
+  "miniOptionLabel": {
+    "message": "Mini player on scroll"
+  },
+  "captionOptionDescription": {
+    "message": "Applies to floating players. Click the percentage to reset."
+  },
   "shortsOptionLabel": {
     "message": "Open Shorts as videos"
   },

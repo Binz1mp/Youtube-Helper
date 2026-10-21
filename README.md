@@ -9,7 +9,7 @@ Simple layout and player controls for YouTube: hide related videos, keep watchin
 - Hide or show related videos and switch to a wider layout.
 - Automatically show a mini player when the video scrolls out of view.
 - Pin the player, drag it to another position, and resize it.
-- Adjust subtitle size from 50% to 200% in the floating menu.
+- Adjust subtitle size from 50% to 200% in the popup or floating menu.
 - Open Shorts in the regular player, with an option to turn conversion off.
 - Use picture-in-picture (PIP) or jump back to the top of the page.
 - Click Popcat in the extension popup for a sound.
@@ -21,7 +21,7 @@ The interface supports English and Korean.
 1. Open a YouTube video. The button row appears below the description, above the comments.
 2. Scroll down to use the automatic mini player, or select **Pin video** to keep the player fixed at its current size. Drag the title bar to move it and the corner to resize it.
 3. Click the floating **+** button to open the viewing tools and subtitle size control. Click the displayed percentage to reset subtitle size to 100%.
-4. Open the extension popup to change **Open Shorts as videos**. It is enabled by default, and changes apply to open YouTube tabs.
+4. Open the extension popup for layout, player, subtitle, and Shorts settings. **Show floating tools button** turns the FAB on or off. Shorts conversion is enabled by default, and changes apply to open YouTube tabs.
 
 After updating or reloading the extension, refresh your open YouTube tabs once to load the new version.
 

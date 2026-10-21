@@ -1,13 +1,13 @@
 document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, signal } }) => {
   const ui = globalThis.youtubeHelper;
   const button = toolbar.querySelector(".remove_right_blank");
-  let hidden = ui.read("right_blank_display") === "display_none";
-  let relatedHidden = ui.read("related_display") === "display_none";
   let related = null;
   let restoredTheater = false;
   const relatedButton = toolbar.querySelector(".related_collapse_button");
 
   function refresh() {
+    const hidden = ui.settings.get("wideLayout") === 1;
+    const relatedHidden = ui.settings.get("hideRelated") === 1;
     const secondary = watch.querySelector("#columns > #secondary");
     button.disabled = !secondary;
     watch.classList.toggle("yh-wide-layout", hidden && Boolean(secondary));
@@ -26,14 +26,13 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, s
     }
   }
   button.addEventListener("click", () => {
-    hidden = !hidden;
-    ui.write("right_blank_display", hidden ? "display_none" : "display_normal");
-    refresh();
-    ui.updateTheater(watch);
+    ui.saveSetting("wideLayout", ui.settings.get("wideLayout") ? 0 : 1, toolbar);
   }, { signal });
   relatedButton.addEventListener("click", () => {
-    relatedHidden = !relatedHidden;
-    ui.write("related_display", relatedHidden ? "display_none" : "display_normal");
+    ui.saveSetting("hideRelated", ui.settings.get("hideRelated") ? 0 : 1, toolbar);
+  }, { signal });
+  document.addEventListener("youtube-helper-settings-change", ({ detail: { keys } }) => {
+    if (!keys.some((key) => key === "hideRelated" || key === "wideLayout")) return;
     refresh();
     ui.updateTheater(watch);
   }, { signal });

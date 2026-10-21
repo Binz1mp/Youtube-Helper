@@ -12,7 +12,9 @@
 }
 * { box-sizing: border-box; }
 body {
-  width: 320px;
+  width: 360px;
+  max-height: 580px;
+  overflow-y: auto;
   margin: 0;
   padding: 20px;
   background: var(--background);
@@ -39,23 +41,23 @@ h1 { font-size: 18px; font-weight: 650; letter-spacing: -.3px; }
 .popcat img { display: block; width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
 .popcat:active img { content: url("images/popcatB.png"); }
 h2 { margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.settings-group { margin-bottom: 18px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--surface); }
 .setting {
   position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
+  padding: 12px 14px;
   background: var(--surface);
   cursor: pointer;
 }
 .setting-copy { flex: 1; min-width: 0; }
+.setting + .setting { border-top: 1px solid var(--border); }
 .setting-title { display: block; font-size: 14px; font-weight: 600; line-height: 1.4; }
 .setting-description { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
-.setting input {
+.setting input[type="checkbox"] {
   position: absolute;
-  right: 16px;
+  right: 14px;
   width: 36px;
   height: 22px;
   margin: 0;
@@ -81,12 +83,20 @@ h2 { margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 600;
   content: "";
   transition: transform .15s;
 }
-.setting input:checked + .switch { background: var(--accent); }
-.setting input:checked + .switch::after { transform: translateX(14px); }
-.setting input:disabled + .switch { opacity: .45; }
-.setting input:focus-visible + .switch,
+.setting input[type="checkbox"]:checked + .switch { background: var(--accent); }
+.setting input[type="checkbox"]:checked + .switch::after { transform: translateX(14px); }
+.setting input[type="checkbox"]:disabled + .switch { opacity: .45; }
+.setting input[type="checkbox"]:focus-visible + .switch,
+.caption-reset:focus-visible,
+.caption-setting input:focus-visible,
 .popcat:focus-visible,
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.caption-setting { padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.caption-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; }
+.caption-reset { min-height: 30px; padding: 4px 8px; border: 0; border-radius: 6px; color: var(--accent); background: transparent; font: inherit; cursor: pointer; }
+.caption-reset:hover { background: var(--border); }
+.caption-reset:disabled { opacity: .45; cursor: default; }
+.caption-setting input { display: block; width: 100%; margin: 10px 0; accent-color: var(--accent); }
 .save-status { min-height: 36px; margin: 10px 2px 18px; color: var(--muted); font-size: 11px; }
 .save-status.is-error { color: var(--error); }
 footer { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--border); color: var(--muted); font-size: 11px; }

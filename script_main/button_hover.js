@@ -40,7 +40,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
   const HEADER = 36;
   const HANDLE = 24;
   const geometries = { mini: null, hover: null };
-  let manual = ui.read("Hovering_status") === "on";
+  let manual = ui.settings.get("pinPlayer") === 1;
   let autoDismissed = false;
   let mode = "inline";
   let expanded = false;
@@ -172,6 +172,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
     ui.setButton(fab, ui.message(value ? "collapseTools" : "expandTools"));
   }
   function setFloatingToolbar(active) {
+    active = active && ui.settings.get("fabVisible") === 1;
     if (toolbar.classList.contains("yh-toolbar-floating") !== active) {
       toolbar.classList.toggle("yh-toolbar-floating", active);
       setExpanded(false);
@@ -304,12 +305,11 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
     mode = "inline";
     if (returned) recoverInlinePlayer(original);
   }
-  function restoreOriginal() {
+  async function restoreOriginal() {
     const original = player;
-    manual = false;
+    if (manual && !await ui.saveSetting("pinPlayer", 0, toolbar)) return;
     autoDismissed = true;
     geometries.hover = null;
-    ui.write("Hovering_status", "off");
     refresh();
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     original?.scrollIntoView({ block: "center", behavior: reduced ? "instant" : "smooth" });
@@ -382,6 +382,11 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
   function refresh() {
     pending = false;
     if (signal.aborted) return;
+    const pinned = ui.settings.get("pinPlayer") === 1;
+    if (manual !== pinned) {
+      manual = pinned;
+      geometries.hover = null;
+    }
     const current = ui.getPlayer(watch);
     const video = current?.querySelector("video");
     if (player) {
@@ -410,7 +415,9 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
     if (sourceVisible) autoDismissed = false;
     const shouldMinimize = !autoDismissed && rect.bottom <= bounds.visibleTop;
     // Explicit Hover keeps its size and always takes priority over scroll mode.
-    const desired = manual ? "hover" : (shouldMinimize || (interaction && mode === "mini")) ? "mini" : "inline";
+    const minimize = ui.settings.get("autoMiniPlayer") === 1 &&
+      (shouldMinimize || (interaction && mode === "mini"));
+    const desired = manual ? "hover" : minimize ? "mini" : "inline";
     if (desired === "inline") {
       detach();
       setFloatingToolbar(false);
@@ -421,10 +428,11 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
       if (desired === "hover") {
         geometries.hover = fit({ left: rect.left, top: rect.top, width: rect.width, height: rect.height, ratio }, bounds);
       } else {
+        const fabSpace = ui.settings.get("fabVisible") === 1 ? 68 : 0;
         const width = Math.min(420, bounds.width - bounds.margin * 2,
-          Math.max(1, bounds.bottom - bounds.minTop - 68) * ratio);
+          Math.max(1, bounds.bottom - bounds.minTop - fabSpace) * ratio);
         geometries.mini = fit({
-          left: bounds.right - width, top: bounds.bottom - 68 - width / ratio,
+          left: bounds.right - width, top: bounds.bottom - fabSpace - width / ratio,
           width, height: width / ratio, ratio,
         }, bounds);
       }
@@ -443,12 +451,11 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
     requestAnimationFrame(refresh);
   }
 
-  toggle.addEventListener("click", () => {
-    manual = !manual;
-    geometries.hover = null;
-    ui.write("Hovering_status", manual ? "on" : "off");
+  toggle.addEventListener("click", async () => {
+    const next = !manual;
+    if (!await ui.saveSetting("pinPlayer", next ? 1 : 0, toolbar) || signal.aborted) return;
     refresh();
-    if (manual) fab.focus({ preventScroll: true });
+    if (manual && toolbar.classList.contains("yh-toolbar-floating")) fab.focus({ preventScroll: true });
   }, { signal });
   fab.addEventListener("click", () => setExpanded(!expanded), { signal });
   toolbar.addEventListener("keydown", (event) => {

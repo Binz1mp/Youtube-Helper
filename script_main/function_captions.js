@@ -1,7 +1,6 @@
 document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, signal } }) => {
   const ui = globalThis.youtubeHelper;
-  const stored = Number(ui.read("caption_scale") || 100);
-  let scale = Number.isFinite(stored) ? Math.round(Math.min(200, Math.max(50, stored)) / 10) * 10 : 100;
+  let scale = ui.settings.get("captionScale");
   let player = null;
   let nativeFont = 0;
   let observer = null;
@@ -64,6 +63,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, s
     player.classList.toggle("yh-caption-sized", compact || scale !== 100);
   }
   function refresh() {
+    scale = ui.settings.get("captionScale");
     const current = ui.getPlayer(watch);
     if (current !== player) {
       observer?.disconnect();
@@ -79,9 +79,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, s
     apply();
   }
   function update(value) {
-    scale = value;
-    ui.write("caption_scale", String(scale));
-    apply();
+    ui.saveSetting("captionScale", value, toolbar);
   }
   slider.addEventListener("input", () => update(slider.valueAsNumber), { signal });
   reset.addEventListener("click", () => update(100), { signal });

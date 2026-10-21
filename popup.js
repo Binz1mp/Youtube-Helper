@@ -3,39 +3,73 @@ for (const element of document.querySelectorAll("[data-i18n]")) {
   element.textContent = chrome.i18n.getMessage(element.dataset.i18n) || element.textContent;
 }
 
-const shortsToggle = document.querySelector("#shorts-as-videos");
+const settings = globalThis.youtubeHelperSettings;
+const controls = [...document.querySelectorAll("[data-setting]")];
 const saveStatus = document.querySelector(".save-status");
-let savedShorts = true;
+const captionSlider = document.querySelector("#caption-scale");
+const captionReset = document.querySelector(".caption-reset");
+const captionOutput = captionReset.querySelector("output");
+const pending = new Set();
+captionReset.title = chrome.i18n.getMessage("captionReset");
+captionReset.setAttribute("aria-label", captionReset.title);
+
 function setSaveStatus(key, error = false) {
   saveStatus.textContent = chrome.i18n.getMessage(key);
   saveStatus.classList.toggle("is-error", error);
 }
-async function loadSettings() {
-  try {
-    const settings = await chrome.storage.local.get({ shortsAsVideos: 1 });
-    savedShorts = settings.shortsAsVideos !== 0 && settings.shortsAsVideos !== false;
-    shortsToggle.checked = savedShorts;
-    shortsToggle.disabled = false;
-  } catch {
-    setSaveStatus("popupLoadError", true);
-  }
+function updateCaptionOutput() {
+  captionOutput.textContent = `${captionSlider.value}%`;
+  captionSlider.setAttribute("aria-valuetext", captionOutput.textContent);
 }
-shortsToggle.addEventListener("change", async () => {
-  const restoreFocus = document.activeElement === shortsToggle;
-  shortsToggle.disabled = true;
+function refresh(keys = Object.keys(settings.defaults)) {
+  for (const control of controls) {
+    const key = control.dataset.setting;
+    if (!keys.includes(key)) continue;
+    if (control.type === "checkbox") control.checked = settings.get(key) === 1;
+    else control.value = String(settings.get(key));
+  }
+  updateCaptionOutput();
+}
+
+async function saveControl(control) {
+  const key = control.dataset.setting;
+  if (pending.has(key)) return;
+  const value = control.type === "checkbox" ? (control.checked ? 1 : 0) : control.valueAsNumber;
+  const focused = document.activeElement;
+  const restoreFocus = focused === control || (control === captionSlider && focused === captionReset);
+  pending.add(key);
+  control.disabled = true;
+  if (control === captionSlider) captionReset.disabled = true;
   try {
-    await chrome.storage.local.set({ shortsAsVideos: shortsToggle.checked ? 1 : 0 });
-    savedShorts = shortsToggle.checked;
+    await settings.set(key, value);
     setSaveStatus("popupSaved");
   } catch {
-    shortsToggle.checked = savedShorts;
     setSaveStatus("popupSaveError", true);
   } finally {
-    shortsToggle.disabled = false;
-    if (restoreFocus) shortsToggle.focus();
+    pending.delete(key);
+    refresh([key]);
+    control.disabled = false;
+    if (control === captionSlider) captionReset.disabled = false;
+    if (restoreFocus) focused.focus();
   }
+}
+for (const control of controls) control.addEventListener("change", () => saveControl(control));
+captionSlider.addEventListener("input", updateCaptionOutput);
+captionReset.addEventListener("click", () => {
+  captionSlider.value = "100";
+  updateCaptionOutput();
+  saveControl(captionSlider);
 });
-loadSettings();
+settings.subscribe(refresh);
+settings.ready.then(() => {
+  refresh();
+  if (!settings.available) {
+    setSaveStatus("popupLoadError", true);
+    return;
+  }
+  for (const control of controls) control.disabled = false;
+  captionReset.disabled = false;
+});
 
 const popcat = document.querySelector(".popcat");
 const sound = new Audio(chrome.runtime.getURL("sfx/popcat.mp3"));

@@ -1,4 +1,5 @@
 (() => {
+  const settings = globalThis.youtubeHelperSettings;
   const icons = {
     related: "M4 5h16v2H4zm0 6h10v2H4zm0 6h10v2H4zm13-6 5 4-5 4z",
     wide: "M3 5h18v14H3zm2 2v10h14V7zm1 1h8v8H6z",
@@ -29,11 +30,14 @@
     }
     return fallback;
   }
-  function read(key) {
-    try { return localStorage.getItem(key); } catch { return null; }
-  }
-  function write(key, value) {
-    try { localStorage.setItem(key, value); } catch { /* Keep the current session usable. */ }
+  async function saveSetting(key, value, toolbar) {
+    try {
+      await settings.set(key, value);
+      return true;
+    } catch {
+      if (toolbar?.isConnected) announce(toolbar, message("popupSaveError"));
+      return false;
+    }
   }
   function icon(name) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -104,8 +108,7 @@
   }
   function updateTheater(watch) {
     if (!session || session.watch !== watch) return;
-    const needsTheater = read("related_display") === "display_none" ||
-      read("right_blank_display") === "display_none";
+    const needsTheater = settings.get("hideRelated") === 1 || settings.get("wideLayout") === 1;
     const sizeButton = getPlayer(watch)?.querySelector(".ytp-size-button");
     if (!sizeButton || document.fullscreenElement) return;
     if (needsTheater && !watch.hasAttribute("theater")) {
@@ -125,7 +128,7 @@
   }
   function reconcile() {
     scheduled = false;
-    if (navigating) return;
+    if (navigating || !settings.loaded) return;
     const watch = getWatch();
     const target = watch && placement(watch);
     if (!target) {
@@ -176,8 +179,12 @@
   }
 
   globalThis.youtubeHelper = {
-    message, read, write, icon, button, setButton, announce, updateTheater, getPlayer, setFloatingPlayer,
+    message, settings, saveSetting, icon, button, setButton, announce, updateTheater, getPlayer, setFloatingPlayer,
   };
+  settings.subscribe((keys) => {
+    document.dispatchEvent(new CustomEvent("youtube-helper-settings-change", { detail: { keys } }));
+    schedule();
+  });
   document.addEventListener("yt-navigate-start", () => {
     navigating = true;
     cleanup();
@@ -187,5 +194,6 @@
     schedule();
   });
   new MutationObserver(schedule).observe(document.documentElement, { childList: true, subtree: true });
+  settings.ready.then(schedule);
   schedule();
 })();

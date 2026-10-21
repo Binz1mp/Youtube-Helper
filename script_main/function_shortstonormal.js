@@ -1,7 +1,7 @@
 (() => {
+  const settings = globalThis.youtubeHelperSettings;
   let enabled = false;
   let ready = false;
-  let settingsChanged = false;
   let redirecting = false;
   let oldHref = location.href;
   const convertedLinks = new WeakMap();
@@ -79,18 +79,8 @@
   document.addEventListener("pointerdown", beforeLinkActivation, { capture: true, passive: true });
   document.addEventListener("click", beforeLinkActivation, { capture: true });
 
-  try {
-    chrome.storage.onChanged.addListener((changes, area) => {
-      if (area !== "local" || !Object.hasOwn(changes, "shortsAsVideos")) return;
-      settingsChanged = true;
-      applySetting(changes.shortsAsVideos.newValue);
-    });
-    chrome.storage.local.get({ shortsAsVideos: 1 }).then((settings) => {
-      // A live change can arrive before the initial storage read completes.
-      if (!settingsChanged) applySetting(settings.shortsAsVideos);
-    }).catch(() => { observer.disconnect(); });
-  } catch {
-    // An extension reload can invalidate APIs in an already-open tab.
-    observer.disconnect();
-  }
+  settings.subscribe((keys) => {
+    if (ready && keys.includes("shortsAsVideos")) applySetting(settings.get("shortsAsVideos"));
+  });
+  settings.ready.then(() => applySetting(settings.get("shortsAsVideos")));
 })();

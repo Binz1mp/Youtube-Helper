@@ -65,6 +65,24 @@
   "popupPlayback": {
     "message": "재생 설정"
   },
+  "popupLayout": {
+    "message": "화면 설정"
+  },
+  "hideRelatedOptionLabel": {
+    "message": "관련 영상 숨기기"
+  },
+  "fabOptionLabel": {
+    "message": "플로팅 도구 버튼 표시"
+  },
+  "fabOptionDescription": {
+    "message": "꺼도 영상 설명 아래의 버튼 줄은 유지됩니다."
+  },
+  "miniOptionLabel": {
+    "message": "스크롤 시 미니 플레이어"
+  },
+  "captionOptionDescription": {
+    "message": "떠 있는 플레이어에 적용됩니다. 퍼센트를 누르면 초기화됩니다."
+  },
   "shortsOptionLabel": {
     "message": "Shorts를 일반 영상으로 보기"
   },

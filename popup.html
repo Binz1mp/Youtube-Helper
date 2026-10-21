@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Youtube Helper</title>
     <link rel="stylesheet" href="popup.css">
+    <script src="settings.js" defer></script>
     <script src="popup.js" defer></script>
   </head>
   <body>
@@ -18,15 +19,60 @@
       </div>
     </header>
     <main>
-      <h2 data-i18n="popupPlayback">Playback</h2>
-      <label class="setting" for="shorts-as-videos">
-        <span class="setting-copy">
-          <span class="setting-title" id="shorts-label" data-i18n="shortsOptionLabel">Open Shorts as videos</span>
-          <span class="setting-description" id="shorts-description" data-i18n="shortsOptionDescription">Convert Shorts links and open them in the regular player.</span>
-        </span>
-        <input id="shorts-as-videos" type="checkbox" role="switch" aria-labelledby="shorts-label" aria-describedby="shorts-description" disabled>
-        <span class="switch" aria-hidden="true"></span>
-      </label>
+      <section aria-labelledby="layout-heading">
+        <h2 id="layout-heading" data-i18n="popupLayout">Layout</h2>
+        <div class="settings-group">
+          <label class="setting" for="hide-related">
+            <span class="setting-copy"><span class="setting-title" id="related-label" data-i18n="hideRelatedOptionLabel">Hide related videos</span></span>
+            <input id="hide-related" data-setting="hideRelated" type="checkbox" role="switch" aria-labelledby="related-label" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+          <label class="setting" for="wide-layout">
+            <span class="setting-copy"><span class="setting-title" id="wide-label" data-i18n="rightBlank_off">Wide layout</span></span>
+            <input id="wide-layout" data-setting="wideLayout" type="checkbox" role="switch" aria-labelledby="wide-label" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+          <label class="setting" for="fab-visible">
+            <span class="setting-copy">
+              <span class="setting-title" id="fab-label" data-i18n="fabOptionLabel">Show floating tools button</span>
+              <span class="setting-description" id="fab-description" data-i18n="fabOptionDescription">The button row stays available when this is off.</span>
+            </span>
+            <input id="fab-visible" data-setting="fabVisible" type="checkbox" role="switch" aria-labelledby="fab-label" aria-describedby="fab-description" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+        </div>
+      </section>
+      <section aria-labelledby="playback-heading">
+        <h2 id="playback-heading" data-i18n="popupPlayback">Playback</h2>
+        <div class="settings-group">
+          <label class="setting" for="auto-mini-player">
+            <span class="setting-copy"><span class="setting-title" id="mini-label" data-i18n="miniOptionLabel">Mini player on scroll</span></span>
+            <input id="auto-mini-player" data-setting="autoMiniPlayer" type="checkbox" role="switch" aria-labelledby="mini-label" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+          <label class="setting" for="pin-player">
+            <span class="setting-copy"><span class="setting-title" id="pin-label" data-i18n="hover_off">Pin video</span></span>
+            <input id="pin-player" data-setting="pinPlayer" type="checkbox" role="switch" aria-labelledby="pin-label" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+          <label class="setting" for="shorts-as-videos">
+            <span class="setting-copy">
+              <span class="setting-title" id="shorts-label" data-i18n="shortsOptionLabel">Open Shorts as videos</span>
+              <span class="setting-description" id="shorts-description" data-i18n="shortsOptionDescription">Convert Shorts links and open them in the regular player.</span>
+            </span>
+            <input id="shorts-as-videos" data-setting="shortsAsVideos" type="checkbox" role="switch" aria-labelledby="shorts-label" aria-describedby="shorts-description" disabled>
+            <span class="switch" aria-hidden="true"></span>
+          </label>
+        </div>
+      </section>
+      <section class="caption-setting" aria-labelledby="caption-label">
+        <div class="caption-heading">
+          <label id="caption-label" for="caption-scale" data-i18n="captionSize">Subtitle size</label>
+          <button class="caption-reset" type="button" disabled><output for="caption-scale">100%</output></button>
+        </div>
+        <input id="caption-scale" data-setting="captionScale" type="range" min="50" max="200" step="10" value="100" aria-describedby="caption-description" disabled>
+        <p id="caption-description" class="setting-description" data-i18n="captionOptionDescription">Applies to floating players. Click the percentage to reset.</p>
+      </section>
       <p class="save-status" role="status" aria-live="polite" data-i18n="popupChangesHint">Changes apply to open YouTube tabs.</p>
     </main>
     <footer>
