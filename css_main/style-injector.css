@@ -231,7 +231,23 @@ ytd-watch-flexy.yh-floating-active #cinematics,
 }
 #movie_player.yh-floating-player .ytp-gradient-bottom,
 #movie_player.yh-floating-player .ytp-gradient-top { width: 100% !important; }
-#movie_player.yh-floating-player .ytp-progress-bar-container { width: 100% !important; }
+/* Keep the track within the floating controls. YouTube owns the chapter,
+   fill and scrubber geometry and refreshes it on a size-change notification. */
+#movie_player.yh-floating-player .ytp-progress-bar-container {
+  width: 100% !important;
+}
+/* Native chapter widths are rounded to pixels and can exceed the smaller
+   track, wrapping the final chapters. Fit them on one row while retaining
+   YouTube's widths as the proportional flex basis and its chapter gaps. */
+#movie_player.yh-floating-player .ytp-chapters-container {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+}
+#movie_player.yh-floating-player .ytp-chapters-container > .ytp-chapter-hover-container {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
 #movie_player.yh-floating-player .ytp-size-button,
 #movie_player.yh-floating-player .ytp-miniplayer-button { display: none !important; }
 #movie_player.yh-floating-player .ytp-caption-window-container { width: 100% !important; height: 100% !important; }

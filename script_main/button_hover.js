@@ -56,6 +56,29 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
   let pending = false;
   let inlineGeometry = null;
   let inlineRecovery = null;
+  let floatingLayoutFrame = null;
+  let floatingLayoutSize = null;
+
+  function updateFloatingLayout(box) {
+    const size = `${box.width.toFixed(2)}:${box.height.toFixed(2)}`;
+    if (size === floatingLayoutSize) return;
+    // Record before notifying: our resize listener also schedules render().
+    // Position-only moves and that follow-up render must not notify again.
+    floatingLayoutSize = size;
+    if (floatingLayoutFrame !== null) return;
+    floatingLayoutFrame = requestAnimationFrame(() => {
+      floatingLayoutFrame = null;
+      if (!player || signal.aborted) return;
+      // Let YouTube update chapter widths, fill transforms and the scrubber
+      // together after the floating dimensions have been applied.
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+  function cancelFloatingLayout() {
+    if (floatingLayoutFrame !== null) cancelAnimationFrame(floatingLayoutFrame);
+    floatingLayoutFrame = null;
+    floatingLayoutSize = null;
+  }
 
   function captureInlineGeometry(current) {
     const nodes = [current, ...current.querySelectorAll(
@@ -120,7 +143,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
       requestAnimationFrame(() => {
         if (!active()) { queued = false; return; }
         // Notify YouTube only after returning to the real inline container.
-        // Floating renders never emit this event, avoiding the former resize loop.
+        // Floating renders notify only when dimensions change to avoid resize loops.
         window.dispatchEvent(new Event("resize"));
         requestAnimationFrame(() => {
           queued = false;
@@ -209,6 +232,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
     panel.style.top = `${box.top - HEADER}px`;
     grip.style.left = `${box.left + box.width - HANDLE / 2}px`;
     grip.style.top = `${box.top + box.height - HANDLE / 2}px`;
+    updateFloatingLayout(box);
   }
   function finishInteraction(event) {
     if (!interaction || (event && event.pointerId !== interaction.pointerId)) return;
@@ -273,6 +297,7 @@ document.addEventListener("youtube-helper-ready", ({ detail: { watch, toolbar, m
   }
   function detach() {
     if (!player) return;
+    cancelFloatingLayout();
     finishInteraction();
     resizeObserver?.disconnect();
     resizeObserver = null;
